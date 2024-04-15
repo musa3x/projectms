@@ -247,7 +247,7 @@ echo -e "     ${BICyan}[${BIWhite}17${BICyan}] DNS CHANGER     \t${BICyan}[${BIW
 #echo -e "${BICyan} ────────────────────────────────────────────────────────────────${NC}"
 echo -e "${IGreen} └──────────────────────────────────────────────────────────────┘${NC}"
 echo -e "${IYellow} ┌──────────────────────── Menu Server ─────────────────────────┐${NC}"
-#echo -e "${BICyan}                  ${BIWhite}${UWhite}»»» Menu Server «««${NC}"
+#echo -e "${BICyan}                 ${BIWhite}${UWhite}»»» Menu Server «««${NC}"
 #echo -e " "
 echo -e "     ${BICyan}[${BIWhite}33${BICyan}] EXP FILES ${NC} \t\t${BICyan}[${BIWhite}66${BICyan}] RESTART ${NC}"    
 echo -e "     ${BICyan}[${BIWhite}44${BICyan}] AUTO REBOOT ${NC} \t\t${BICyan}[${BIWhite}77${BICyan}] BACKUP/RESTORE ${NC}"    
