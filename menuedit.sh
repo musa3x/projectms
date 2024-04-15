@@ -212,7 +212,7 @@ echo -e "${BICyan} │  ${BICyan}Kernel          \t: ${BICyan}$(uname -r)${NC}\t
 echo -e "${BICyan} │  ${BICyan}CPU Name        \t:${BIWCyan}$cname${NC}\t\t\t${BICyan}│"
 echo -e "${BICyan} │  ${BICyan}CPU Info        \t: ${BIBlue}$cores Cores @ $freq MHz (${cpu_usage}) ${NC}\t\t${BICyan}│"
 echo -e "${BICyan} │  ${BICyan}Total RAM       \t: ${BIBlue}${ram_used}MB / ${total_ram}MB (${ram_usage}%) ${NC} \t\t${BICyan}│"
-echo -e "${BICyan} │  ${BICyan}System Uptime   \t: ${BIRed}$uptime${NC}\t\t\t${BICyan}│"
+echo -e "${BICyan} │  ${BICyan}System Uptime   \t: ${BIRed}$uptime${NC}\t\t\t\t${BICyan}│"
 echo -e "${BICyan} │  ${BICyan}Current Domain  \t: ${BIGreen}$(cat /etc/xray/domain)${NC}\t\t\t${BICyan}│"
 #echo -e "${BICyan} │  ${BICyan}IP-VPS          \t: ${BIGreen}$IPVPS${NC}\t\t${BICyan}│"
 echo -e "${BICyan} │  ${BICyan}Daily Bandwidth \t: ${BIYellow}$daily_usage ${NC} \t\t\t\t${BICyan}│"
