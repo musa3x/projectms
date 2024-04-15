@@ -217,7 +217,7 @@ echo -e "     ${BICyan}[${BIWhite}2${BICyan}] Delete Account Sodosok     "
 echo -e "     ${BICyan}[${BIWhite}3${BICyan}] Renew Account Sodosok     "
 echo -e "     ${BICyan}[${BIWhite}4${BICyan}] Check User XRAY     "
 echo -e " ${BICyan}└─────────────────────────────────────────────────────┘${NC}"
-echo -e "     ${BIYellow}Press x or [ Ctrl+C ] • To-${BIWhite}Exit${NC}"
+echo -e "     ${BIYellow}Tekan x atau [ Ctrl+C ] • untuk-${BIWhite}Keluar. atau Tekan Enter untuk kembali ke menu utama${NC}"
 echo ""
 read -p " Select menu : " opt
 echo -e ""
