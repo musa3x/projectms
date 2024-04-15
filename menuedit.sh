@@ -206,7 +206,7 @@ cores=$(awk -F: '/model name/ {core++} END {print core}' /proc/cpuinfo)
 freq=$(awk -F: ' /cpu MHz/ {freq=$2} END {print freq}' /proc/cpuinfo)
 clear
 echo -e "${BICyan} ┌──────────────────────────────────────────────────────────────┐${NC}"
-echo -e "${BICyan} │               ${BIGreen}${UWhite}»»» Auto Script Panel By Musa »»»${NC}${BICyan}│${NC}"
+echo -e "${BICyan} │               ${BIGreen}${UWhite}»»» Auto Script Panel By Musa »»»${NC}${BICyan}\t\t\t│${NC}"
 echo -e "${BICyan} └──────────────────────────────────────────────────────────────┘${NC}"
 echo -e "${BICyan} ┌──────────────────────────────────────────────────────────────┐${NC}"
 echo -e "${BICyan} │                  ${BIWhite}${UWhite}»»» Server Informations «««${NC}\t\t\t${BICyan}│"
@@ -223,11 +223,10 @@ echo -e "${BICyan} │  ${BICyan}Daily Bandwidth :  ${BIGreen}$daily_usage ${NC}
 echo -e "${BICyan} │  ${BICyan}Total Bandwidth :  ${BIGreen}$monthly_usage ${NC}\t\t\t\t${BICyan}│"
 echo -e "${BICyan} └──────────────────────────────────────────────────────────────┘${NC}"
 echo -e " "
-echo -e "================================================================"
-echo -e "|${BICyan}                  ${BIWhite}${UWhite}»»» Status Service <<${NC} \t\t\t|"
+echo -e "»»»»»»»»»»»»»»»»»»»»»»»»»${BIWhite}${UWhite} Status Service ${NC}««««««««««««««««««««««««"
 echo -e "|     ${BICyan} SSH ${NC}: $ressh"" ${BICyan} NGINX ${NC}: $resngx"" ${BICyan}  XRAY ${NC}: $resv2r"" ${BICyan} TROJAN ${NC}: $resv2r \t\t|"
 echo -e "|     ${BICyan} DROPBEAR ${NC}: $resdbr" "${BICyan} SSH-WS ${NC}: $ressshws" Stunnel ${NC}: $sshstunel"\t\t|"
-echo -e "================================================================"
+echo -e "└◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊◊┘"
 echo -e " "
 echo -e "${BICyan} ┌──────────────────────────────────────────────────────────────┐${NC}"
 echo -e "${BICyan}                  ${BIWhite}${UWhite}»»» Menu SSH/XRAY «««${NC}\t\t\t\t${BICyan}"
