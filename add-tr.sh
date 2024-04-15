@@ -103,12 +103,12 @@ sed -i '/#trojangrpc$/a\#trg '"$user $exp"'\
 systemctl restart xray
 cat > /home/vps/public_html/trojan-$user.txt <<-END
 ====================================================================
-             P R O J E C T  O F  N E V E R M O R E S S H
+             P R O J E C T  O F  M S S T O R E  S S H
                        [Freedom Internet]
 ====================================================================
-        https://github.com/NevermoreSSH/Blueblue
+         https://github.com/Musa3x/sshwstrvray
 ====================================================================
-              Format Trojan WS/GO/GRPC - BBv2
+               Format Trojan WS/GO/GRPC - BBv2
 ====================================================================
 
 _______________________________________________________
