@@ -205,10 +205,7 @@ cname=$(awk -F: '/model name/ {name=$2} END {print name}' /proc/cpuinfo)
 cores=$(awk -F: '/model name/ {core++} END {print core}' /proc/cpuinfo)
 freq=$(awk -F: ' /cpu MHz/ {freq=$2} END {print freq}' /proc/cpuinfo)
 clear
-echo -e "${BICyan} ┌──────────────────────────────────────────────────────────────┐${NC}"
-echo -e "${BICyan} │               ${BIGreen}${UWhite}»»» Auto Script Panel By Musa »»»${NC}${BICyan}\t\t\t│${NC}"
-echo -e "${BICyan} └──────────────────────────────────────────────────────────────┘${NC}"
-echo -e "${BICyan} ┌──────────────────────────────────────────────────────────────┐${NC}"
+echo -e "${BICyan} ┌──────────────────────── Auto Script Panel By Musa ────────────────────────┐${NC}"
 echo -e "${BICyan} │                  ${BIWhite}${UWhite}»»» Server Informations «««${NC}\t\t\t${BICyan}│"
 echo -e "${BICyan} │\t\t\t\t\t\t\t\t│"
 echo -e "${BICyan} │  ${BICyan}OS Linux        :  "$(hostnamectl | grep "Operating System" | cut -d ' ' -f5-) "${BICyan}\t\t\t│"
