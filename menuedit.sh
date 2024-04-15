@@ -250,12 +250,9 @@ echo -e "${BICyan} └───────────────────�
 echo -e "${BICyan} ┌──────────────────────── Menu Server ─────────────────────────┐${NC}"
 #echo -e "${BICyan}                  ${BIWhite}${UWhite}»»» Menu Server «««${NC}"
 #echo -e " "
-echo -e "     ${BICyan}[${BIWhite}33${BICyan}] EXP FILES ${NC}"    
-echo -e "     ${BICyan}[${BIWhite}44${BICyan}] AUTO REBOOT ${NC}"    
-echo -e "     ${BICyan}[${BIWhite}55${BICyan}] REBOOT ${NC}"    
-echo -e "     ${BICyan}[${BIWhite}66${BICyan}] RESTART ${NC}"    
-echo -e "     ${BICyan}[${BIWhite}77${BICyan}] BACKUP/RESTORE ${NC}"
-echo -e "     ${BICyan}[${BIWhite}x ${BICyan}] EXIT ${BICyan}${BIYellow}${BICyan}${NC}"  
+echo -e "     ${BICyan}[${BIWhite}33${BICyan}] EXP FILES ${NC} \t${BICyan}[${BIWhite}66${BICyan}] RESTART ${NC}"    
+echo -e "     ${BICyan}[${BIWhite}44${BICyan}] AUTO REBOOT ${NC} \t${BICyan}[${BIWhite}77${BICyan}] BACKUP/RESTORE ${NC}"    
+echo -e "     ${BICyan}[${BIWhite}55${BICyan}] REBOOT ${NC} \t${BICyan}[${BIWhite}x ${BIRed}] EXIT"     
 echo -e "${BICyan} └──────────────────────────────────────────────────────────────┘${NC}"
 echo
 read -p " Select menu : " opt
