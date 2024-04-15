@@ -206,8 +206,7 @@ cores=$(awk -F: '/model name/ {core++} END {print core}' /proc/cpuinfo)
 freq=$(awk -F: ' /cpu MHz/ {freq=$2} END {print freq}' /proc/cpuinfo)
 clear
 echo -e "${BICyan} ┌──────────────────────────────────────────────────────────────┐${NC}"
-echo -e "${BICyan} │                   ${BIGreen}${IGreen}»»» Welcome «««${NC}                            │"
-echo -e "${BICyan} │               ${BIGreen}${IGreen}Auto Script Panel By Musa${NC}                      │${NC}"
+echo -e "${BICyan} │               ${BIGreen}${UWhite}»»» Auto Script Panel By Musa »»»${NC}                      ${BICyan}│${NC}"
 echo -e "${BICyan} └──────────────────────────────────────────────────────────────┘${NC}"
 echo -e "${BICyan} ┌──────────────────────────────────────────────────────────────┐${NC}"
 echo -e "${BICyan} │                  ${BIWhite}${UWhite}»»» Server Informations «««${NC}\t\t\t${BICyan}│"
