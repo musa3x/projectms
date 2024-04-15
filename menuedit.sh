@@ -210,7 +210,7 @@ echo -e "${BICyan} ┌────────────────── Aut
 echo -e "${BICyan} │  ${BICyan}OS Linux        \t: "$(hostnamectl | grep "Operating System" | cut -d ' ' -f5-) "${BICyan}\t\t\t│"
 echo -e "${BICyan} │  ${BICyan}Kernel          \t: ${BICyan}$(uname -r)${NC}\t\t\t${BICyan}│"
 echo -e "${BICyan} │  ${BICyan}CPU Name        \t:${BIWCyan}$cname${NC}\t\t\t${BICyan}│"
-echo -e "${BICyan} │  ${BICyan}CPU Info        \t: ${BIBlue}$cores Cores @ $freq MHz (${cpu_usage}) ${NC}\t${BICyan}│"
+echo -e "${BICyan} │  ${BICyan}CPU Info        \t: ${BIBlue}$cores Cores @ $freq MHz (${cpu_usage}) ${NC}\t\t${BICyan}│"
 echo -e "${BICyan} │  ${BICyan}Total RAM       \t: ${BIBlue}${ram_used}MB / ${total_ram}MB (${ram_usage}%) ${NC} \t\t${BICyan}│"
 echo -e "${BICyan} │  ${BICyan}System Uptime   \t: ${BIRed}$uptime${NC}\t\t\t${BICyan}│"
 echo -e "${BICyan} │  ${BICyan}Current Domain  \t: ${BIGreen}$(cat /etc/xray/domain)${NC}\t\t\t${BICyan}│"
