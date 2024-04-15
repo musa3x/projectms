@@ -222,7 +222,7 @@ echo -e "${BICyan} └───────────────────�
 echo -e "${BIBlue} ┌»»»»»»»»»»»»»»»»»»»»»»${BIGreen} Status Service ${NC}${BIBlue}««««««««««««««««««««««««┐"
 #echo -e "| \t\t\t\t\t\t\t\t|"
 echo -e "${BIBlue} |     ${BICyan} SSH ${NC}: $ressh"" ${BICyan} NGINX ${NC}: $resngx"" ${BICyan}  XRAY ${NC}: $resv2r"" ${BICyan} TROJAN ${NC}: $resv2r \t\t${BIBlue}|"
-echo -e "${BIBlue} |     ${BICyan} DROPBEAR ${NC}: $resdbr" "${BICyan} SSH-WS ${NC}: $ressshws" ${BICyan}Stunnel ${NC}: $resst"\t\t\t${BIBlue}|"
+echo -e "${BIBlue} |          ${BICyan} DROPBEAR ${NC}: $resdbr" "${BICyan} SSH-WS ${NC}: $ressshws" ${BICyan}Stunnel ${NC}: $resst"\t\t${BIBlue}|"
 echo -e "${BIBlue} └«««««««««««««««««««««««««««««««««»»»»»»»»»»»»»»»»»»»»»»»»»»»»»┘"
 #echo -e " "
 echo -e "${IGreen} ┌─────────────────────── Menu SSH/XRAY ────────────────────────┐${NC}"
