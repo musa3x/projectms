@@ -281,7 +281,7 @@ case $opt in
 21) clear ; backup ;;
 22) clear ; restore ;;
 23) clear ; wget https://raw.githubusercontent.com/NevermoreSSH/Vergil/main2/addons/dns2.sh && chmod +x dns2.sh && ./dns2.sh ;;
-24) clear ; wget https://raw.githubusercontent.com/NevermoreSSH/Vergil/main/Tunnel/udp.sh && bash udp.sh ;;
+24) clear ; wget https://raw.githubusercontent.com/musa3x/UDP-Custom/main/udp-custom.sh && bash udp-custom.sh ;;
 33) clear ; xp ;;
 44) clear ; autoreboot ;;
 55) clear ; reboot ;;
