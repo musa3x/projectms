@@ -222,7 +222,7 @@ echo -e "${BICyan} └───────────────────�
 echo -e "${BIBlue} ┌»»»»»»»»»»»»»»»»»»»»»»»${BIGreen}Status Service${NC}${BIBlue}«««««««««««««««««««««««««┐"
 #echo -e "| \t\t\t\t\t\t\t\t|"
 echo -e "${BIBlue} |     ${BICyan} SSH ${NC}: $ressh"" ${BICyan} NGINX ${NC}: $resngx"" ${BICyan}  XRAY ${NC}: $resv2r"" ${BICyan} TROJAN ${NC}: $resv2r \t\t${BIBlue}|"
-echo -e "${BIBlue} |     ${BICyan} DROPBEAR ${NC}: $resdbr" "${BICyan} SSH-WS ${NC}: $ressshws" Stunnel ${NC}: $sshstunel"\t\t${BIBlue}|"
+echo -e "${BIBlue} |     ${BICyan} DROPBEAR ${NC}: $resdbr" "${BICyan} SSH-WS ${NC}: $ressshws" ${BICyan}Stunnel ${NC}: $resst"\t\t${BIBlue}|"
 echo -e "${BIBlue} └«««««««««««««««««««««««««««««««««»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»┘"
 echo -e " "
 echo -e "${BICyan} ┌─────────────────────── Menu SSH/XRAY ────────────────────────┐${NC}"
@@ -251,7 +251,7 @@ echo -e "${BICyan} ┌───────────────────�
 #echo -e " "
 echo -e "     ${BICyan}[${BIWhite}33${BICyan}] EXP FILES ${NC} \t\t${BICyan}[${BIWhite}66${BICyan}] RESTART ${NC}"    
 echo -e "     ${BICyan}[${BIWhite}44${BICyan}] AUTO REBOOT ${NC} \t\t${BICyan}[${BIWhite}77${BICyan}] BACKUP/RESTORE ${NC}"    
-echo -e "     ${BICyan}[${BIWhite}55${BICyan}] REBOOT ${NC} \t\t${BICyan}[${BIWhite}x${BIRed}] EXIT"     
+echo -e "     ${BICyan}[${BIWhite}55${BICyan}] REBOOT ${NC} \t\t${BICyan}[${BIWhite}x${BIWhite}]${BIRed} EXIT"     
 echo -e "${BICyan} └──────────────────────────────────────────────────────────────┘${NC}"
 echo
 read -p " Select menu : " opt
