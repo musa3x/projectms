@@ -43,8 +43,8 @@ export WARNING="${RED}\e[5m"
 export UNDERLINE="\e[4m"
 
 # // Exporting URL Host
-export Server_URL="raw.githubusercontent.com/NevermoreSSH/Blueblue/main/test"
-export Server1_URL="raw.githubusercontent.com/NevermoreSSH/Blueblue/main/limit"
+export Server_URL="raw.githubusercontent.com/Musa3x/sshwstrvray/main/test"
+export Server1_URL="raw.githubusercontent.com/Musa3x/sshwstrvray/main/limit"
 export Server_Port="443"
 export Server_IP="underfined"
 export Script_Mode="Stable"
@@ -103,10 +103,10 @@ sed -i '/#vlessgrpc$/a\#vlsg '"$user $exp"'\
 cat > /home/vps/public_html/vless-$user.txt <<-END
 
 ====================================================================
-             P R O J E C T  O F  N E V E R M O R E S S H
+             P R O J E C T  O F  M S S T O R E  S S H
                        [Freedom Internet]
 ====================================================================
-        https://github.com/NevermoreSSH/Blueblue
+        https://github.com/Musa3x/sshwstrvray
 ====================================================================
               Format Vless WS/GRPC
 ====================================================================
