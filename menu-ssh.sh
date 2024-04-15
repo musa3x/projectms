@@ -411,7 +411,7 @@ read -n 1 -s -r -p "Press any key to back on menu"
 menu
 }
 clear
-echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
+echo -e "${BIGreen} ┌─────────────────────────────────────────────────────┐${NC}"
 echo -e "       ${BIWhite}${UWhite}SSH MENU ${NC}"
 echo -e ""
 echo -e "     ${BICyan}[${BIWhite}1${BICyan}] Add Account SSH      "
@@ -422,8 +422,8 @@ echo -e "     ${BICyan}[${BIWhite}5${BICyan}] Multilogin SSH     "
 echo -e "     ${BICyan}[${BIWhite}6${BICyan}] Auto Delete user Expired     "
 echo -e "     ${BICyan}[${BIWhite}7${BICyan}] Auto Kill user SSH    "
 echo -e "     ${BICyan}[${BIWhite}8${BICyan}] Check Member SSH"
-echo -e " ${BICyan}└─────────────────────────────────────────────────────┘${NC}"
-echo -e "     ${BIYellow}Press x or [ Ctrl+C ] • To-${BIWhite}Exit${NC}"
+echo -e " ${BIGreen}└─────────────────────────────────────────────────────┘${NC}"
+echo -e "     ${BIYellow}Tekan x atau [ Ctrl+C ] • untuk-${BIWhite}Keluar. atau Tekan Enter untuk kembali ke menu utama${NC}"
 echo ""
 read -p " Select menu : " opt
 echo -e ""
