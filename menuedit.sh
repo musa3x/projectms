@@ -205,8 +205,10 @@ cname=$(awk -F: '/model name/ {name=$2} END {print name}' /proc/cpuinfo)
 cores=$(awk -F: '/model name/ {core++} END {print core}' /proc/cpuinfo)
 freq=$(awk -F: ' /cpu MHz/ {freq=$2} END {print freq}' /proc/cpuinfo)
 clear
+echo -e "${BICyan} »»» Welcome ««« ${NC}"
+echo -e "${BICyan} Auto Script Panel By Musa ${NC}"
 echo -e "${BICyan} ┌──────────────────────────────────────────────────────────────┐${NC}"
-echo -e "${BICyan} │                  ${BIWhite}${UWhite}>> Server Informations <<${NC}\t\t\t\t${BICyan}│"
+echo -e "${BICyan} │                  ${BIWhite}${UWhite}»»» Server Informations «««${NC}\t\t\t\t${BICyan}│"
 echo -e "${BICyan} │\t\t\t\t\t\t\t\t│"
 echo -e "${BICyan} │  ${BICyan}OS Linux        :  "$(hostnamectl | grep "Operating System" | cut -d ' ' -f5-) "${BICyan}\t\t\t│"
 echo -e "${BICyan} │  ${BICyan}Kernel          :  ${BICyan}$(uname -r)${NC}\t\t\t${BICyan}│"
@@ -219,44 +221,39 @@ echo -e "${BICyan} │  ${BICyan}IP-VPS          :  ${BIWhite}$IPVPS${NC}\t\t${B
 echo -e "${BICyan} │  ${BICyan}Daily Bandwidth :  ${BIWhite}$daily_usage ${NC} \t\t\t\t${BICyan}│"
 echo -e "${BICyan} │  ${BICyan}Total Bandwidth :  ${BIWhite}$monthly_usage ${NC}\t\t\t\t${BICyan}│"
 echo -e "${BICyan} └──────────────────────────────────────────────────────────────┘${NC}"
-echo -e "${BICyan}                  ${BIWhite}${UWhite}>> Status Service <<${NC}"
+echo -e " "
+echo -e "${BICyan}                  ${BIWhite}${UWhite}»»» Status Service <<${NC}"
 echo -e "     ${BICyan} SSH ${NC}: $ressh"" ${BICyan} NGINX ${NC}: $resngx"" ${BICyan}  XRAY ${NC}: $resv2r"" ${BICyan} TROJAN ${NC}: $resv2r"
 echo -e "     ${BICyan} DROPBEAR ${NC}: $resdbr" "${BICyan} SSH-WS ${NC}: $ressshws" Stunnel ${NC}: $sshstunel" "${BICyan}
+echo -e " "
 echo -e "${BICyan} ────────────────────────────────────────────────────────────────${NC}"
-echo -e "${BICyan}                  ${BIWhite}${UWhite}>>> Menu SSH/XRAY <<<${NC}\t\t\t\t${BICyan}"
-echo -e "     ${BICyan}[${BIWhite}01${BICyan}] SSH-WS      ${WB}[${GB}${ssh}${WB}] ${BICyan}[${BIWhite}11${BICyan}] ADD HOST/DOMAIN" 
-echo -e "     ${BICyan}[${BIWhite}02${BICyan}] VMESS       ${WB}[${GB}${vmess}${WB}] ${BICyan}[${BIWhite}12${BICyan}] RENEW CERT"    
-echo -e "     ${BICyan}[${BIWhite}03${BICyan}] VLESS       ${WB}[${GB}${vless}${WB}] ${BICyan}[${BIWhite}13${BICyan}] EDIT BANNER"    
-echo -e "     ${BICyan}[${BIWhite}04${BICyan}] TROJAN      ${WB}[${GB}${tr}${WB}] ${BICyan}[${BIWhite}14${BICyan}] RUNNING STATUS" 
-echo -e "     ${BICyan}[${BIWhite}05${BICyan}] SHADOWSOCKS ${WB}[${GB}${ss}${WB}] ${BICyan}[${BIWhite}15${BICyan}] USER BANDWIDTH"   
+echo -e "${BICyan}                  ${BIWhite}${UWhite}»»» Menu SSH/XRAY «««${NC}\t\t\t\t${BICyan}"
+echo -e "     ${BICyan}[${BIWhite}01${BICyan}] SSH-WS      \t${WB}[${GB}${ssh}${WB}] ${BICyan}[${BIWhite}6${BICyan}] ADD HOST/DOMAIN" 
+echo -e "     ${BICyan}[${BIWhite}02${BICyan}] VMESS       \t${WB}[${GB}${vmess}${WB}] ${BICyan}[${BIWhite}7${BICyan}] RENEW CERT"    
+echo -e "     ${BICyan}[${BIWhite}03${BICyan}] VLESS       \t${WB}[${GB}${vless}${WB}] ${BICyan}[${BIWhite}8${BICyan}] EDIT BANNER"    
+echo -e "     ${BICyan}[${BIWhite}04${BICyan}] TROJAN      \t${WB}[${GB}${tr}${WB}] ${BICyan}[${BIWhite}9${BICyan}] RUNNING STATUS" 
+echo -e "     ${BICyan}[${BIWhite}05${BICyan}] SHADOWSOCKS \t${WB}[${GB}${ss}${WB}] ${BICyan}[${BIWhite}10${BICyan}] USER BANDWIDTH"   
+echo -e " "
 echo -e "${BICyan} ────────────────────────────────────────────────────────────────${NC}"
-echo -e "${BICyan}                  ${BIWhite}${UWhite}>> Menu Service <<${NC}"
-echo -e "     ${BICyan}[${BIWhite}16${BICyan}] SPEEDTEST ${BICyan}${BIYellow}${BICyan}${NC}"
-echo -e "     ${BICyan}[${BIWhite}17${BICyan}] CHECK BANDWIDTH ${BICyan}${BIYellow}${BICyan}${NC}"
-echo -e "     ${BICyan}[${BIWhite}18${BICyan}] LIMIT SPEED ${BICyan}${BIYellow}${BICyan}${NC}"
-echo -e "     ${BICyan}[${BIWhite}19${BICyan}] WEBMIN ${BICyan}${BIYellow}${BICyan}${NC}"
-echo -e "     ${BICyan}[${BIWhite}20${BICyan}] INFO SCRIPT ${BICyan}${BIYellow}${BICyan}${NC}" 
-echo -e "     ${BICyan}[${BIWhite}21${BICyan}] CLEAR LOG ${BICyan}${BIYellow}${BICyan}${NC}" 
-echo -e "     ${BICyan}[${BIWhite}22${BICyan}] TASK MANAGER ${BICyan}${BIYellow}${BICyan}${NC}"
-echo -e "     ${BICyan}[${BIWhite}23${BICyan}] DNS CHANGER ${BICyan}${BIYellow}${BICyan}${NC}"
-echo -e "     ${BICyan}[${BIWhite}24${BICyan}] NETFLIX CHECKER ${BICyan}${BIYellow}${BICyan}${NC}"
-echo -e "     ${BICyan}[${BIWhite}25${BICyan}] TENDANG ${BICyan}${BIYellow}${BICyan}${NC}"
-echo -e "     ${BICyan}[${BIWhite}33${BICyan}] XRAY-CORE MENU ${BICyan}${BIYellow}${BICyan}${NC}"
-echo -e "     ${BICyan}[${BIWhite}44${BICyan}] INSTALL BBRPLUS ${BICyan}${BIYellow}${BICyan}${NC}"
-echo -e "     ${BICyan}[${BIWhite}55${BICyan}] SWAPRAM MENU ${BICyan}${BIYellow}${BICyan}${NC}"
-echo -e "     ${BICyan}[${BIWhite}66${BICyan}] BACKUP USER ${BICyan}${BIYellow}${BICyan}${NC}"
-echo -e "     ${BICyan}[${BIWhite}77${BICyan}] RESTORE USER ${BICyan}${BIYellow}${BICyan}${NC}"
-echo -e "     ${BICyan}[${BIWhite}88${BICyan}] INSTALL SLOWDNS ${BICyan}${BIYellow}${BICyan}${NC}"
-echo -e "     ${BICyan}[${BIWhite}99${BICyan}] INSTALL UDPCUSTOM ${BICyan}${BIYellow}${BICyan}${NC}" 
+echo -e "${BICyan}                  ${BIWhite}${UWhite}»»» Menu Service «««${NC}"
+echo -e "     ${BICyan}[${BIWhite}11${BICyan}] SPEEDTEST       \t ${BICyan}[${BIWhite}18${BICyan}] TENDANG"
+echo -e "     ${BICyan}[${BIWhite}12${BICyan}] CHECK BANDWIDTH \t ${BICyan}[${BIWhite}19${BICyan}] XRAY-CORE MEN"
+echo -e "     ${BICyan}[${BIWhite}13${BICyan}] LIMIT SPEED     \t ${BICyan}[${BIWhite}20${BICyan}] SWAPRAM MENU"
+echo -e "     ${BICyan}[${BIWhite}14${BICyan}] INFO SCRIPT     \t ${BICyan}[${BIWhite}21${BICyan}] BACKUP USER" 
+echo -e "     ${BICyan}[${BIWhite}15${BICyan}] CLEAR LOG       \t ${BICyan}[${BIWhite}22${BICyan}] RESTORE USER" 
+echo -e "     ${BICyan}[${BIWhite}16${BICyan}] TASK MANAGER    \t ${BICyan}[${BIWhite}23${BICyan}] INSTALL SLOWDNS"
+echo -e "     ${BICyan}[${BIWhite}17${BICyan}] DNS CHANGER     \t ${BICyan}[${BIWhite}24${BICyan}] INSTALL UDPCUSTOM"
+echo -e " "
 echo -e "${BICyan} ────────────────────────────────────────────────────────────────${NC}"
-echo -e "${BICyan}                  ${BIWhite}${UWhite}>> Menu Server <<${NC}"
-echo -e "     ${BICyan}[${BIWhite}06${BICyan}] EXP FILES ${NC}"    
-echo -e "     ${BICyan}[${BIWhite}07${BICyan}] AUTO REBOOT ${NC}"    
-echo -e "     ${BICyan}[${BIWhite}08${BICyan}] REBOOT ${NC}"    
-echo -e "     ${BICyan}[${BIWhite}09${BICyan}] RESTART ${NC}"    
-echo -e "     ${BICyan}[${BIWhite}10${BICyan}] BACKUP/RESTORE ${NC}"
+echo -e "${BICyan}                  ${BIWhite}${UWhite}»»» Menu Server «««${NC}"
+echo -e "     ${BICyan}[${BIWhite}33${BICyan}] EXP FILES ${NC}"    
+echo -e "     ${BICyan}[${BIWhite}44${BICyan}] AUTO REBOOT ${NC}"    
+echo -e "     ${BICyan}[${BIWhite}55${BICyan}] REBOOT ${NC}"    
+echo -e "     ${BICyan}[${BIWhite}66${BICyan}] RESTART ${NC}"    
+echo -e "     ${BICyan}[${BIWhite}77${BICyan}] BACKUP/RESTORE ${NC}"
 echo -e "     ${BICyan}[${BIWhite}x ${BICyan}] EXIT ${BICyan}${BIYellow}${BICyan}${NC}"  
 echo -e "${BICyan} └──────────────────────────────────────────────────────────────┘${NC}"
+echo -e " "
 echo -e " ${BICyan}┌─────────────────────────────────────┐${NC}"
 echo -e " ${BICyan}│  Version      ${NC} : $sem Last Update"    
 echo -e " ${BICyan}└─────────────────────────────────────┘${NC}"
@@ -269,33 +266,31 @@ case $opt in
 3) clear ; menu-vless ;;
 4) clear ; menu-trojan ;;
 5) clear ; menu-ss ;;
-6) clear ; xp ;;
-7) clear ; autoreboot ;;
-8) clear ; reboot ;;
-9) clear ; restart ;;
-10) clear ; menu-bckp ;;
-11) clear ; addhost ;;
-12) clear ; genssl ;;
-13) clear ; nano /etc/issue.net ;;
-14) clear ; running ;;
-15) clear ; cek-trafik ;;
-16) clear ; cek-speed ;;
-17) clear ; cek-bandwidth ;;
-18) clear ; limit-speed ;;
-19) clear ; wbm ;;
-20) clear ; cat /root/log-install.txt ;;
-21) clear ; clearlog ;;
-22) clear ; gotop ;;
-23) clear ; dns ;;
-24) clear ; netf ;;
-25) clear ; tendang ;;
-33) clear ; wget -q -O /usr/bin/xraychanger "https://raw.githubusercontent.com/NevermoreSSH/Xcore-custompath/main/xraychanger.sh" && chmod +x /usr/bin/xraychanger && xraychanger ;;
-44) clear ; bbr ;;
-55) clear ; wget -q -O /usr/bin/swapram "https://raw.githubusercontent.com/NevermoreSSH/swapram/main/swapram.sh" && chmod +x /usr/bin/swapram && swapram ;;
-66) clear ; backup ;;
-77) clear ; restore ;;
-88) clear ; wget https://raw.githubusercontent.com/NevermoreSSH/Vergil/main2/addons/dns2.sh && chmod +x dns2.sh && ./dns2.sh ;;
-99) clear ; wget https://raw.githubusercontent.com/NevermoreSSH/Vergil/main/Tunnel/udp.sh && bash udp.sh ;;
+6) clear ; addhost ;;
+7) clear ; genssl ;;
+8) clear ; nano /etc/issue.net ;;
+9) clear ; running ;;
+10) clear ; cek-trafik ;;
+
+11) clear ; cek-speed ;;
+12) clear ; cek-bandwidth ;;
+13) clear ; limit-speed ;;
+14) clear ; cat /root/log-install.txt ;;
+15) clear ; clearlog ;;
+16) clear ; gotop ;;
+17) clear ; dns ;;
+18) clear ; tendang ;;
+19) clear ; wget -q -O /usr/bin/xraychanger "https://raw.githubusercontent.com/NevermoreSSH/Xcore-custompath/main/xraychanger.sh" && chmod +x /usr/bin/xraychanger && xraychanger ;;
+20) clear ; wget -q -O /usr/bin/swapram "https://raw.githubusercontent.com/NevermoreSSH/swapram/main/swapram.sh" && chmod +x /usr/bin/swapram && swapram ;;
+21) clear ; backup ;;
+22) clear ; restore ;;
+23) clear ; wget https://raw.githubusercontent.com/NevermoreSSH/Vergil/main2/addons/dns2.sh && chmod +x dns2.sh && ./dns2.sh ;;
+24) clear ; wget https://raw.githubusercontent.com/NevermoreSSH/Vergil/main/Tunnel/udp.sh && bash udp.sh ;;
+33) clear ; xp ;;
+44) clear ; autoreboot ;;
+55) clear ; reboot ;;
+66) clear ; restart ;;
+77) clear ; menu-bckp ;;
 0) clear ; menu ;;
 x) exit ;;
 *) echo -e "" ; echo "Press any key to back exit" ; sleep 1 ; exit ;;
