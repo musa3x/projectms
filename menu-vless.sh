@@ -210,7 +210,7 @@ echo "Script Mod By NevermoreSSH"
     menu-vless
 }
 clear
-echo -e "${IYellow} ┌───────────────────── VLESS menu-vless ────────────────────┐${NC}"
+echo -e "${IYellow} ┌───────────────────── Menu-vless ────────────────────┐${NC}"
 echo -e ""
 echo -e "     ${BICyan}[${BIWhite}1${BICyan}] Add Account Vless     "
 echo -e "     ${BICyan}[${BIWhite}2${BICyan}] Delete Account Vless     "
