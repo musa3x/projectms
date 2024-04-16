@@ -210,13 +210,13 @@ echo "Script Mod By NevermoreSSH"
     menu
 }
 clear
-echo -e "${BIGreen} ┌───────────────────── VLESS MENU ────────────────────┐${NC}"
+echo -e "${IYellow} ┌───────────────────── VLESS MENU ────────────────────┐${NC}"
 echo -e ""
 echo -e "     ${BICyan}[${BIWhite}1${BICyan}] Add Account Vless     "
 echo -e "     ${BICyan}[${BIWhite}2${BICyan}] Delete Account Vless     "
 echo -e "     ${BICyan}[${BIWhite}3${BICyan}] Renew Account Vless     "
 echo -e "     ${BICyan}[${BIWhite}4${BICyan}] Check User XRAY     "
-echo -e " ${BIGreen}└─────────────────────────────────────────────────────┘${NC}"
+echo -e " ${IYellow}└─────────────────────────────────────────────────────┘${NC}"
 echo -e "     ${BIYellow}Tekan x atau [ Ctrl+C ] • ${BIWhite}untuk Keluar${NC}"
 echo -e "     ${BIBlue}Tekan Enter untuk kembali ke • ${BIWhite}menu utama ${NC}"
 echo ""
