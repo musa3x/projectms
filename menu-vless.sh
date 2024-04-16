@@ -108,8 +108,8 @@ done
 rm -rf /tmp/other.txt
 
 echo ""
-read -n 1 -s -r -p "Press any key to back on menu"
-menu
+read -n 1 -s -r -p "Press any key to back on menu-vless"
+menu-vless
 }
 function renewws(){
 clear
@@ -124,8 +124,8 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^#vlsg " "/etc/xray/config.json")
 		echo ""
 		echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
         echo ""
-        read -n 1 -s -r -p "Press any key to back on menu"
-        menu
+        read -n 1 -s -r -p "Press any key to back on menu-vless"
+        menu-vless
 	fi
 
 	clear
@@ -139,7 +139,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^#vlsg " "/etc/xray/config.json")
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 	read -rp "Input Username : " user
     if [ -z $user ]; then
-    menu
+    menu-vless
     else
     read -p "Expired (days): " masaaktif
     exp=$(grep -wE "^#vlsg $user" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
@@ -162,8 +162,8 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^#vlsg " "/etc/xray/config.json")
     echo ""
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo ""
-    read -n 1 -s -r -p "Press any key to back on menu"
-    menu
+    read -n 1 -s -r -p "Press any key to back on menu-vless"
+    menu-vless
   fi
 }
 function delws() {
@@ -205,12 +205,12 @@ echo "Expired   : $exp"
 echo "==============================="
 echo "Script Mod By NevermoreSSH"
     echo ""
-    read -n 1 -s -r -p "Press any key to back on menu"
+    read -n 1 -s -r -p "Press any key to back on menu-vless"
     
-    menu
+    menu-vless
 }
 clear
-echo -e "${IYellow} ┌───────────────────── VLESS MENU ────────────────────┐${NC}"
+echo -e "${IYellow} ┌───────────────────── VLESS menu-vless ────────────────────┐${NC}"
 echo -e ""
 echo -e "     ${BICyan}[${BIWhite}1${BICyan}] Add Account Vless     "
 echo -e "     ${BICyan}[${BIWhite}2${BICyan}] Delete Account Vless     "
@@ -218,9 +218,9 @@ echo -e "     ${BICyan}[${BIWhite}3${BICyan}] Renew Account Vless     "
 echo -e "     ${BICyan}[${BIWhite}4${BICyan}] Check User XRAY     "
 echo -e " ${IYellow}└─────────────────────────────────────────────────────┘${NC}"
 echo -e "     ${BIYellow}Tekan x atau [ Ctrl+C ] • ${BIWhite}untuk Keluar${NC}"
-echo -e "     ${BIBlue}Tekan Enter untuk kembali ke • ${BIWhite}menu utama ${NC}"
+echo -e "     ${BIBlue}Tekan Enter untuk kembali ke • ${BIWhite}menu-vless utama ${NC}"
 echo ""
-read -p " Select menu : " opt
+read -p " Select menu-vless : " opt
 echo -e ""
 case $opt in
 1) clear ; add-vless ;;
@@ -229,5 +229,5 @@ case $opt in
 4) clear ; cekws ;;
 0) clear ; menu ;;
 x) exit ;;
-*) echo -e "" ; echo "Press any key to back on menu" ; sleep 1 ; menu ;;
+*) echo -e "" ; echo "Press any key to back on menu-vless" ; sleep 1 ; menu-vless ;;
 esac
