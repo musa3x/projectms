@@ -45,8 +45,8 @@ export WARNING="${RED}\e[5m"
 export UNDERLINE="\e[4m"
 
 # // Exporting URL Host
-export Server_URL="raw.githubusercontent.com/NevermoreSSH/Blueblue/main/test"
-export Server1_URL="raw.githubusercontent.com/NevermoreSSH/Blueblue/main/limit"
+export Server_URL="raw.githubusercontent.com/MS Store/Blueblue/main/test"
+export Server1_URL="raw.githubusercontent.com/MS Store/Blueblue/main/limit"
 export Server_Port="443"
 export Server_IP="underfined"
 export Script_Mode="Stable"
@@ -202,15 +202,14 @@ echo "==============================="
 echo "Username  : $user"
 echo "Expired   : $exp"
 echo "==============================="
-echo "Script Mod By NevermoreSSH"
+echo "Script Mod By MS Store"
     echo ""
     read -n 1 -s -r -p "Press any key to back on menu"
     
     menu
 }
 clear
-echo -e "${BIGreen} ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e "       ${BIWhite}${UWhite}Trojan ${NC}"
+echo -e "${BIGreen} ┌──────────────────── Trojan ─────────────────────────┐${NC}"
 echo -e ""
 echo -e "     ${BICyan}[${BIWhite}1${BICyan}] Add Account Trojan      "
 echo -e "     ${BICyan}[${BIWhite}2${BICyan}] Delete Account Trojan      "
