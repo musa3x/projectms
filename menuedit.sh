@@ -227,10 +227,10 @@ echo -e "${BIBlue} └«««««««««««««««««««««««««««««
 echo -e "${BIGreen} ┌─────────────────────── Menu SSH/XRAY ────────────────────────┐${NC}"
 #echo -e "${BICyan}                  ${BIWhite}${UWhite}»»» Menu SSH/XRAY «««${NC}\t\t\t\t${BICyan}"
 #echo -e " "
-echo -e "     ${BICyan}[${BIWhite}01${BICyan}] SSH-WS      ${WB}[${GB}${ssh}${WB}] \t${BICyan}[${BIWhite}06${BICyan}]  ADD HOST/DOMAIN" 
-echo -e "     ${BICyan}[${BIWhite}02${BICyan}] VMESS       ${WB}[${GB}${vmess}${WB}] \t${BICyan}[${BIWhite}07${BICyan}]  RENEW CERT"    
-echo -e "     ${BICyan}[${BIWhite}03${BICyan}] VLESS       ${WB}[${GB}${vless}${WB}] \t${BICyan}[${BIWhite}08${BICyan}]  EDIT BANNER"    
-echo -e "     ${BICyan}[${BIWhite}04${BICyan}] TROJAN      ${WB}[${GB}${tr}${WB}] \t${BICyan}[${BIWhite}09${BICyan}]  RUNNING STATUS" 
+echo -e "     ${BICyan}[${BIWhite}01${BICyan}] SSH-WS      ${WB}[${GB}${ssh}${WB}] \t${BICyan}[${BIWhite}06${BICyan}] ADD HOST/DOMAIN" 
+echo -e "     ${BICyan}[${BIWhite}02${BICyan}] VMESS       ${WB}[${GB}${vmess}${WB}] \t${BICyan}[${BIWhite}07${BICyan}] RENEW CERT"    
+echo -e "     ${BICyan}[${BIWhite}03${BICyan}] VLESS       ${WB}[${GB}${vless}${WB}] \t${BICyan}[${BIWhite}08${BICyan}] EDIT BANNER"    
+echo -e "     ${BICyan}[${BIWhite}04${BICyan}] TROJAN      ${WB}[${GB}${tr}${WB}] \t${BICyan}[${BIWhite}09${BICyan}] RUNNING STATUS" 
 echo -e "     ${BICyan}[${BIWhite}05${BICyan}] SHADOWSOCKS ${WB}[${GB}${ss}${WB}] \t${BICyan}[${BIWhite}10${BICyan}] USER BANDWIDTH"   
 echo -e "${BIGreen} └──────────────────────────────────────────────────────────────┘${NC}"
 echo -e "${IGreen} ┌──────────────────────── Menu Service ────────────────────────┐${NC}"
@@ -250,7 +250,7 @@ echo -e "${IYellow} ┌───────────────────
 #echo -e " "
 echo -e "     ${BICyan}[${BIWhite}33${BICyan}] EXP FILES ${NC} \t\t${BICyan}[${BIWhite}66${BICyan}] RESTART ${NC}"    
 echo -e "     ${BICyan}[${BIWhite}44${BICyan}] AUTO REBOOT ${NC} \t\t${BICyan}[${BIWhite}77${BICyan}] BACKUP/RESTORE ${NC}"    
-echo -e "     ${BICyan}[${BIWhite}55${BICyan}] REBOOT ${NC} \t\t${BICyan}[${BIRed}XX${BICyan}]${BIRed}  EXIT"     
+echo -e "     ${BICyan}[${BIWhite}55${BICyan}] REBOOT ${NC} \t\t${BICyan}[${BIRed}XX${BICyan}]${BIRed} EXIT"     
 echo -e "${IYellow} └──────────────────────────────────────────────────────────────┘${NC}"
 echo
 read -p " Select menu : " opt
