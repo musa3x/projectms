@@ -83,7 +83,7 @@ fi
 
 read -n 1 -s -r -p "Press any key to back on menu"
 
-menu
+menu-ssh
 }
 function autodel(){
 clear
@@ -127,7 +127,7 @@ clear
                echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"  
                
                read -n 1 -s -r -p "Press any key to back on menu"
-               menu
+               menu-ssh
         
 }
 function ceklim(){
@@ -151,7 +151,7 @@ echo " ";
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo " ";
 read -n 1 -s -r -p "Press any key to back on menu"
-menu
+menu-ssh
 }
 function cek(){
 if [ -e "/var/log/auth.log" ]; then
@@ -232,7 +232,7 @@ rm -f /tmp/vpn-login-tcp.txt
 rm -f /tmp/vpn-login-udp.txt
 read -n 1 -s -r -p "Press any key to back on menu"
 
-menu
+menu-ssh
 }
 function member(){
 clear
@@ -260,7 +260,7 @@ echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━�
 echo "Account number: $JUMLAH user"
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 read -n 1 -s -r -p "Press any key to back on menu"
-menu
+menu-ssh
 }
 function renew(){
 clear
@@ -303,7 +303,7 @@ echo -e ""
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 fi
 read -n 1 -s -r -p "Press any key to back on menu"
-menu
+menu-ssh
 }
 function autokill(){
 clear
@@ -401,14 +401,14 @@ case $AutoKill in
                 service cron restart >/dev/null 2>&1
                 ;;
                 x)
-                menu
+                menu-ssh
                 ;;
                 *)
                 echo "Please enter an correct number"
                 ;;
         esac
 read -n 1 -s -r -p "Press any key to back on menu"
-menu
+menu-ssh
 }
 clear
 echo -e "${BIYellow} ┌────────────────────── SSH MENU ─────────────────────┐${NC}"
