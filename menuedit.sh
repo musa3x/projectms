@@ -250,7 +250,7 @@ echo -e "${IYellow} ┌───────────────────
 #echo -e " "
 echo -e "${IYellow} |     ${BICyan}[${BIWhite}33${BICyan}] EXP FILES ${NC} \t\t${BICyan}[${BIWhite}66${BICyan}] RESTART ${NC} \t\t\t${IYellow}|"    
 echo -e "${IYellow} |     ${BICyan}[${BIWhite}44${BICyan}] AUTO REBOOT ${NC} \t${BICyan}[${BIWhite}77${BICyan}] BACKUP/RESTORE \t\t${IYellow}|${NC}"    
-echo -e "${IYellow} |     ${BICyan}[${BIWhite}55${BICyan}] REBOOT ${NC} \t\t${BICyan}[${BIRed}XX/Enter ${BICyan}]${BIRed} EXIT \t\t${IYellow}|"     
+echo -e "${IYellow} |     ${BICyan}[${BIWhite}55${BICyan}] REBOOT ${NC} \t\t${BICyan}[${BIRed}XX${BICyan}]${BIRed} EXIT \t\t${IYellow}|"     
 echo -e "${IYellow} └──────────────────────────────────────────────────────────────┘${NC}"
 echo
 read -p " Select menu : " opt
@@ -288,5 +288,5 @@ case $opt in
 77) clear ; menu-bckp ;;
 0) clear ; menu ;;
 xx) exit ;;
-*) echo -e "" ; echo "Press any key to back exit" ; sleep 1 ; exit ;;
+*) echo -e "" ; echo "Press any key to back on menu" ; sleep 1 ; menu ;;
 esac
