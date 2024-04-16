@@ -209,7 +209,7 @@ echo "Script Mod By NevermoreSSH"
     menu-ss
 }
 clear
-echo -e "${BICyan} ┌────────────────────── SHADOW SOCK ───────────────────┐${NC}"
+echo -e "${BICyan} ┌───────────────────── SHADOW SOCK ───────────────────┐${NC}"
 echo -e ""
 echo -e "     ${BICyan}[${BIWhite}1${BICyan}] Add Account Shadow Sock     "
 echo -e "     ${BICyan}[${BIWhite}2${BICyan}] Delete Account Shadow Sock     "
