@@ -237,7 +237,7 @@ echo -e "${IGreen} ┌───────────────────�
 #echo -e "${BICyan}                  ${BIWhite}${UWhite}»»» Menu Service «««${NC}"
 #echo -e " "
 echo -e "${IGreen} |  ${BICyan}[${BIWhite}11${BICyan}] SPEEDTEST       \t\t${BICyan}[${BIWhite}18${BICyan}] TENDANG \t\t${IGreen}|"
-echo -e "${IGreen} |  ${BICyan}[${BIWhite}12${BICyan}] CHECK BANDWIDTH \t\t${BICyan}[${BIWhite}19${BICyan}] XRAY-CORE MEN \t${IGreen}|"
+echo -e "${IGreen} |  ${BICyan}[${BIWhite}12${BICyan}] CHECK BANDWIDTH \t\t${BICyan}[${BIWhite}19${BICyan}] XRAY-CORE MENU \t${IGreen}|"
 echo -e "${IGreen} |  ${BICyan}[${BIWhite}13${BICyan}] LIMIT SPEED     \t\t${BICyan}[${BIWhite}20${BICyan}] SWAPRAM MENU \t${IGreen}|"
 echo -e "${IGreen} |  ${BICyan}[${BIWhite}14${BICyan}] INFO SCRIPT     \t\t${BICyan}[${BIWhite}21${BICyan}] BACKUP USER \t${IGreen}|" 
 echo -e "${IGreen} |  ${BICyan}[${BIWhite}15${BICyan}] CLEAR LOG       \t\t${BICyan}[${BIWhite}22${BICyan}] RESTORE USER \t${IGreen}|" 
