@@ -411,7 +411,7 @@ read -n 1 -s -r -p "Press any key to back on menu"
 menu
 }
 clear
-echo -e "${IGreen} ┌─────────────────────── SSH MENU ─────────────────────┐${NC}"
+echo -e "${IGreen} ┌────────────────────── SSH MENU ─────────────────────┐${NC}"
 echo -e ""
 echo -e "  ${BICyan}[${BIWhite}1${BICyan}] Add Account SSH \t${BICyan}[${BIWhite}5${BICyan}] Multilogin SSH     "
 echo -e "  ${BICyan}[${BIWhite}2${BICyan}] Delete Account SSH ${BICyan}[${BIWhite}6${BICyan}] Auto Delete user Exp"
