@@ -45,8 +45,8 @@ export WARNING="${RED}\e[5m"
 export UNDERLINE="\e[4m"
 
 # // Exporting URL Host
-export Server_URL="raw.githubusercontent.com/NevermoreSSH/Blueblue/main/test"
-export Server1_URL="raw.githubusercontent.com/NevermoreSSH/Blueblue/main/limit"
+export Server_URL="raw.githubusercontent.com/musa3x/sshwstrvray/main/test"
+export Server1_URL="raw.githubusercontent.com/musa3x/sshwstrvray/main/limit"
 export Server_Port="443"
 export Server_IP="underfined"
 export Script_Mode="Stable"
@@ -210,8 +210,7 @@ echo "Script Mod By NevermoreSSH"
     menu
 }
 clear
-echo -e "${BIGreen} ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e "       ${BIWhite}${UWhite}Vless${NC}"
+echo -e "${BIGreen} ┌───────────────────── VLESS MENU ────────────────────┐${NC}"
 echo -e ""
 echo -e "     ${BICyan}[${BIWhite}1${BICyan}] Add Account Vless     "
 echo -e "     ${BICyan}[${BIWhite}2${BICyan}] Delete Account Vless     "
