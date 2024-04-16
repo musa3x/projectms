@@ -250,7 +250,7 @@ echo -e "${IYellow} ┌───────────────────
 #echo -e " "
 echo -e "     ${BICyan}[${BIWhite}33${BICyan}] EXP FILES ${NC} \t\t${BICyan}[${BIWhite}66${BICyan}] RESTART ${NC}"    
 echo -e "     ${BICyan}[${BIWhite}44${BICyan}] AUTO REBOOT ${NC} \t\t${BICyan}[${BIWhite}77${BICyan}] BACKUP/RESTORE ${NC}"    
-echo -e "     ${BICyan}[${BIWhite}55${BICyan}] REBOOT ${NC} \t\t${BICyan}[${BIRed}XX${BICyan}]${BIRed} EXIT"     
+echo -e "     ${BICyan}[${BIWhite}55${BICyan}] REBOOT ${NC} \t\t${BICyan}[${BIRed}XX${BICyan}/Enter]${BIRed} EXIT"     
 echo -e "${IYellow} └──────────────────────────────────────────────────────────────┘${NC}"
 echo
 read -p " Select menu : " opt
