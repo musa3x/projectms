@@ -43,8 +43,8 @@ export WARNING="${RED}\e[5m"
 export UNDERLINE="\e[4m"
 
 # // Exporting URL Host
-export Server_URL="raw.githubusercontent.com/NevermoreSSH/Blueblue/main/test"
-export Server1_URL="raw.githubusercontent.com/NevermoreSSH/Blueblue/main/limit"
+export Server_URL="raw.githubusercontent.com/musa3x/sshwstrvray/main/test"
+export Server1_URL="raw.githubusercontent.com/musa3x/sshwstrvray/main/limit"
 export Server_Port="443"
 export Server_IP="underfined"
 export Script_Mode="Stable"
@@ -78,32 +78,22 @@ echo -e ""
 echo -e "${cyan}======================================${off}"
 echo -e        "           BANDWITH MONITOR " | lolcat
 echo -e "${cyan}======================================${off}"
-echo -e "${green}"
-echo -e " 1 ⸩ View Total Bandwidth Remaining"
-
-echo -e " 2 ⸩ Usage Table Every 5 Minutes"
-
-echo -e " 3 ⸩ Hourly Usage Table"
-
-echo -e " 4 ⸩ Daily Usage Table"
-
-echo -e " 5 ⸩ Monthly Usage Table"
-
-echo -e " 6 ⸩ Annual Usage Table"
-
-echo -e " 7 ⸩ Highest Usage Table"
-
-echo -e " 8 ⸩ Hourly Usage Statistics"
-
-echo -e " 9 ⸩ View Current Active Usage"
-
-echo -e " 10 ⸩ View Current Active Usage Traffic [5s]"
-
-echo -e "     x ⸩   Menu"
+echo -e ""
+echo -e "${BIWhite} 1  ${green}⸩ View Total Bandwidth Remaining${off}"
+echo -e "${BIWhite} 2  ${green}⸩ Usage Table Every 5 Minutes${off}"
+echo -e "${BIWhite} 3  ${green}⸩ Hourly Usage Table${off}"
+echo -e "${BIWhite} 4  ${green}⸩ Daily Usage Table${off}"
+echo -e "${BIWhite} 5  ${green}⸩ Monthly Usage Table${off}"
+echo -e "${BIWhite} 6  ${green}⸩ Annual Usage Table${off}"
+echo -e "${BIWhite} 7  ${green}⸩ Highest Usage Table${off}"
+echo -e "${BIWhite} 8  ${green}⸩ Hourly Usage Statistics${off}"
+echo -e "${BIWhite} 9  ${green}⸩ View Current Active Usage${off}"
+echo -e "${BIWhite} 10 ${green}⸩ View Current Active Usage Traffic [5s]${off}"
+echo -e "${BIWhite} x  ${green}⸩ Menu${off}"
 echo -e "${off}"
 echo -e "${cyan}======================================${off}"
 echo -e "${green}"
-read -p "     [#]  Masukkan Nomor :  " noo
+read -p "[#]  Masukkan Pilihan :  " noo
 echo -e "${off}"
 
 case $noo in
@@ -122,7 +112,7 @@ echo -e "$baris2" | lolcat
 
 2)
 echo -e "${cyan}======================================${off}"
-echo -e "  BANDWITH USAGE EVERY 5 MINUTES" | lolcat
+echo -e "    BANDWITH USAGE EVERY 5 MINUTES" | lolcat
 echo -e "${cyan}======================================${off}"
 echo -e ""
 
