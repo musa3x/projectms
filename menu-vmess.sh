@@ -218,7 +218,7 @@ echo -e "     ${BICyan}[${BIWhite}3${BICyan}] Renew Account Vmess     "
 echo -e "     ${BICyan}[${BIWhite}4${BICyan}] Check User XRAY     "
 echo -e " ${IYellow}└──────────────────────────────────────────────────┘${NC}"
 echo -e "     ${BIYellow}Tekan x atau [ Ctrl+C ] • ${BIWhite}untuk Keluar${NC}"
-echo -e "     ${BIBlue}Tekan Enter untuk kembali ke • ${BIWhite}menu-vmess utama ${NC}"
+echo -e "     ${BIBlue}Tekan Enter untuk kembali ke • ${BIWhite}menu utama ${NC}"
 echo ""
 read -p " Select menu-vmess : " opt
 echo -e ""
