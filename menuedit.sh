@@ -224,7 +224,7 @@ echo -e "${BIBlue} |     ${BICyan} SSH ${NC}: $ressh"" ${BICyan} NGINX ${NC}: $r
 echo -e "${BIBlue} |         ${BICyan} DROPBEAR ${NC}: $resdbr" "${BICyan} SSH-WS ${NC}: $ressshws" ${BICyan}Stunnel ${NC}: $resst"\t\t${BIBlue}|"
 echo -e "${BIBlue} └«««««««««««««««««««««««««««««««««»»»»»»»»»»»»»»»»»»»»»»»»»»»»»┘"
 #echo -e " "
-echo -e "${BIGreen} ┌─────────────────────── Menu SSH/XRAY ────────────────────────┐${NC}"
+echo -e "${BIGreen} ┌──────────────────────── Menu SSH/XRAY ───────────────────────┐${NC}"
 #echo -e "${BICyan}                  ${BIWhite}${UWhite}»»» Menu SSH/XRAY «««${NC}\t\t\t\t${BICyan}"
 #echo -e " "
 echo -e "${BIGreen} |     ${BICyan}[${BIWhite}01${BICyan}] SSH-WS      ${WB}[${GB}${ssh}${WB}] \t${BICyan}[${BIWhite}06${BICyan}] ADD HOST/DOMAIN \t\t${BIGreen}|" 
