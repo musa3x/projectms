@@ -330,25 +330,25 @@ else
 gg="AM"
 fi
 echo -e "[ ${green}Pleas Wait Update DB ${NC} ]"
-git clone https://github.com/NevermoreSSH/limit.git /root/limit/ &> /dev/null
+git clone https://github.com/musa3x/sshwstrvray/limit.git /root/limit/ &> /dev/null
 babu=$(cat /etc/.geovpn/license.key)
 echo -e "$babu $IP $Masa_Laku_License_Berlaku_Sampai" >> /root/limit/limit.txt
 cd /root/limit
-    git config --global user.email "pribadi.no99@gmail.com" &> /dev/null
-    git config --global user.name "NevermoreSSH" &> /dev/null
+    git config --global user.email "vendorax.vendorax@gmail.com" &> /dev/null
+    git config --global user.name "musa3x" &> /dev/null
     rm -fr .git &> /dev/null
     git init &> /dev/null
     git add . &> /dev/null
     git commit -m m &> /dev/null
     git branch -M main &> /dev/null
-    git remote add origin https://github.com/NevermoreSSH/limit
-    git push -f https://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@github.com/kenDevXD/limit.git &> /dev/null
+    git remote add origin https://github.com/musa3x/sshwstrvray/limit
+    git push -f https://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@github.com/musa3x/sshwstrvray/limit.git &> /dev/null
 cd
 echo "1.1" >> /home/.ver
 rm -fr /root/limit
 curl -sS ifconfig.me > /etc/myipvps
 echo " "
-echo "====================-[ NevermoreSSH TUNNELING ]-===================="
+echo "====================-[ MS STORE SSH TUNNELING ]-===================="
 echo ""
 echo "------------------------------------------------------------"
 echo ""
@@ -392,7 +392,7 @@ echo ""
 echo ""
 echo "------------------------------------------------------------"
 echo ""
-echo "===============-[ Script Mod By NEVERMORESSH TUNNELING ]-==============="
+echo "===============-[ Script Mod By MS STORE SSH TUNNELING ]-==============="
 echo -e ""
 echo ""
 echo "" | tee -a log-install.txt
