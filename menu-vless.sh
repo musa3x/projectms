@@ -229,5 +229,5 @@ case $opt in
 4) clear ; cekws ;;
 0) clear ; menu ;;
 x) exit ;;
-*) echo -e "" ; echo "Press any key to back on menu-vless" ; sleep 1 ; menu-vless ;;
+*) echo -e "" ; echo "Press any key to back on menu" ; sleep 1 ; menu ;;
 esac
