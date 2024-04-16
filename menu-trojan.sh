@@ -209,13 +209,13 @@ echo "Script Mod By MS Store"
     menu
 }
 clear
-echo -e "${BIGreen} ┌──────────────────── Trojan ─────────────────────────┐${NC}"
+echo -e "${IYellow} ┌──────────────────── Trojan ─────────────────────────┐${NC}"
 echo -e ""
 echo -e "     ${BICyan}[${BIWhite}1${BICyan}] Add Account Trojan      "
 echo -e "     ${BICyan}[${BIWhite}2${BICyan}] Delete Account Trojan      "
 echo -e "     ${BICyan}[${BIWhite}3${BICyan}] Renew Account Trojan      "
 echo -e "     ${BICyan}[${BIWhite}4${BICyan}] Check User XRAY     "
-echo -e " ${BIGreen}└─────────────────────────────────────────────────────┘${NC}"
+echo -e " ${IYellow}└─────────────────────────────────────────────────────┘${NC}"
 echo -e "     ${BIYellow}Tekan x atau [ Ctrl+C ] • ${BIWhite}untuk Keluar${NC}"
 echo -e "     ${BIBlue}Tekan Enter untuk kembali ke • ${BIWhite}menu utama ${NC}"
 echo ""
