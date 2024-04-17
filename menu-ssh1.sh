@@ -170,7 +170,7 @@ echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━�
 grep -i "dropbear" "$LOG" | grep -i "Password auth succeeded" > /tmp/login-db.txt
 for PID in "${data[@]}"
 do
-    grep "dropbear\[$PID\]" /tmp/login-db.txt > /tmp/login-db-pid.txt
+    grep "dropbear[$PID]" /tmp/login-db.txt > /tmp/login-db-pid.txt
     NUM=$(cat /tmp/login-db-pid.txt | wc -l)
     if [ "$NUM" -eq 1 ]; then
         USER=$(awk '{print $10}' /tmp/login-db-pid.txt)
