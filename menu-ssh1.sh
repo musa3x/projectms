@@ -404,7 +404,7 @@ read -n 1 -s -r -p "Press any key to back on menu"
 menu-ssh
 }
 clear
-echo -e "${BIYellow} ┌────────────────────── SSH MENU" | lolcat "${BIYellow}──────────────────────┐${NC}"
+echo -e "${BIYellow} ┌────────────────────── ${BIGreen}SSH MENU ${BIYellow}──────────────────────┐${NC}"
 echo -e ""
 echo -e "  ${BICyan}[${BIWhite}1${BICyan}] Add Account SSH      \t${BICyan}[${BIWhite}5${BICyan}] Multilogin SSH     "
 echo -e "  ${BICyan}[${BIWhite}2${BICyan}] Delete Account SSH   \t${BICyan}[${BIWhite}6${BICyan}] Auto Delete user Exp"
