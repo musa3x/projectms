@@ -170,8 +170,8 @@ do
         IP=`cat /tmp/login-db-pid.txt | awk '{print $12}'`;
         if [ $NUM -eq 1 ]; then
                 echo "$PID - $USER - $IP";
+		echo -e "------------------------------------" 
         fi
-echo -e "------------------------------------" 
 
 done
 echo " "
@@ -191,8 +191,9 @@ do
         IP=`cat /tmp/login-db-pid.txt | awk '{print $11}'`;
         if [ $NUM -eq 1 ]; then
                 echo "$PID - $USER - $IP";
+		echo -e "------------------------------------" 
         fi
-echo -e "------------------------------------" 
+
 
 done
 if [ -f "/etc/openvpn/server/openvpn-tcp.log" ]; then
