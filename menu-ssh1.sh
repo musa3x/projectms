@@ -69,7 +69,7 @@ clear
 function del(){
 clear
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "\E[0;41;36m               DELETE USER                \E[0m"
+echo -e "              DELETE USER" | lolcat
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"  
 echo ""
 read -p "Username SSH to Delete : " Pengguna
@@ -89,9 +89,9 @@ function autodel(){
 clear
                hariini=`date +%d-%m-%Y`
                echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-               echo -e "\E[0;41;36m               AUTO DELETE                \E[0m"
+               echo -e "               AUTO DELETE" | lolcat
                echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"  
-               echo "Thank you for removing the EXPIRED USERS"
+               echo "Thank you for removing the EXPIRED USERS"| lolcat
                echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"  
                cat /etc/shadow | cut -d: -f1,8 | sed /:$/d > /tmp/expirelist.txt
                totalaccounts=`cat /tmp/expirelist.txt | wc -l`
@@ -133,7 +133,7 @@ clear
 function ceklim(){
 clear
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "\E[0;41;36m         CHECK USER MULTI SSH        \E[0m"
+echo -e "         CHECK USER MULTI SSH" | lolcat
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 if [ -e "/root/log-limit.txt" ]; then
 echo "User Who Violate The Maximum Limit";
@@ -156,11 +156,11 @@ menu-ssh
 function cek(){
 LOG="/var/log/auth.log";
 data=( `ps aux | grep -i dropbear | awk '{print $2}'`);
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "          Dropbear User Login" | lolcat       
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "         Dropbear User Login" | lolcat       
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo "ID  |  Username  |  IP Address";
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 cat $LOG | grep -i dropbear | grep -i "Password auth succeeded" > /tmp/login-db.txt;
 for PID in "${data[@]}"
 do
@@ -171,15 +171,15 @@ do
         if [ $NUM -eq 1 ]; then
                 echo "$PID - $USER - $IP";
         fi
-echo -e ""
+echo -e "------------------------------------" 
 
 done
 echo " "
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "          OpenSSH User Login" | lolcat     
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "         OpenSSH User Login" | lolcat     
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo "ID  |  Username  |  IP Address";
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 cat $LOG | grep -i "sshd" | grep -i "Accepted password for" > /tmp/login-db.txt
 data=( `ps aux | grep "\[priv\]" | sort -k 72 | awk '{print $2}'`);
 
@@ -192,16 +192,16 @@ do
         if [ $NUM -eq 1 ]; then
                 echo "$PID - $USER - $IP";
         fi
-echo -e ""
+echo -e "------------------------------------" 
 
 done
 if [ -f "/etc/openvpn/server/openvpn-tcp.log" ]; then
         echo " "
-        echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+        echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
         echo -e "\E[0;41;36m          OpenVPN TCP User Login         \E[0m"
-        echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+        echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
         echo "Username  |  IP Address  |  Connected Since";
-        echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+        echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
         cat /etc/openvpn/server/openvpn-tcp.log | grep -w "^CLIENT_LIST" | cut -d ',' -f 2,3,8 | sed -e 's/,/      /g' > /tmp/vpn-login-tcp.txt
         cat /tmp/vpn-login-tcp.txt
 fi
@@ -209,11 +209,11 @@ echo -e ""
 
 if [ -f "/etc/openvpn/server/openvpn-udp.log" ]; then
         echo " "
-        echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+        echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
         echo -e "\E[0;41;36m          OpenVPN UDP User Login         \E[0m"
-        echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+        echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
         echo "Username  |  IP Address  |  Connected Since";
-        echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+        echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
         cat /etc/openvpn/server/openvpn-udp.log | grep -w "^CLIENT_LIST" | cut -d ',' -f 2,3,8 | sed -e 's/,/      /g' > /tmp/vpn-login-udp.txt
         cat /tmp/vpn-login-udp.txt
 fi
@@ -229,11 +229,11 @@ menu-ssh
 }
 function member(){
 clear
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "\E[0;41;36m                 MEMBER SSH               \E[0m"
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"      
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "                 MEMBER SSH               " | lolcat
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"      
 echo "USERNAME          EXP DATE          STATUS"
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 while read expired
 do
 AKUN="$(echo $expired | cut -d: -f1)"
@@ -249,9 +249,9 @@ fi
 fi
 done < /etc/passwd
 JUMLAH="$(awk -F: '$3 >= 1000 && $1 != "nobody" {print $1}' /etc/passwd | wc -l)"
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo "Account number: $JUMLAH user"
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo "Account number: $JUMLAH user" | lolcat
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 read -n 1 -s -r -p "Press any key to back on menu"
 menu-ssh
 }
@@ -259,7 +259,7 @@ function renew(){
 clear
 clear
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "\E[0;41;36m               RENEW  USER                \E[0m"
+echo -e "               RENEW  USER                " | lolcat
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"  
 echo
 read -p "Username : " User
@@ -277,7 +277,7 @@ egrep "^$User" /etc/passwd >/dev/null
 echo -e "$Pass\n$Pass\n"|passwd $User &> /dev/null
 clear
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "\E[0;41;36m               RENEW  USER                \E[0m"
+echo -e "               RENEW  USER               " | lolcat
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"  
 echo -e ""
 echo -e " Username : $User"
@@ -288,7 +288,7 @@ echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━�
 else
 clear
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "\E[0;41;36m               RENEW  USER                \E[0m"
+echo -e "              RENEW  USER                "| lolcat
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"  
 echo -e ""
 echo -e "   Username Doesnt Exist      "
@@ -311,7 +311,7 @@ sts="${Error}"
 fi
 clear
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "\E[44;1;39m             AUTOKILL SSH          \E[0m"
+echo -e "           AUTOKILL SSH         "| lolcat
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "Status Autokill : $sts        "
 echo -e ""
@@ -404,7 +404,7 @@ read -n 1 -s -r -p "Press any key to back on menu"
 menu-ssh
 }
 clear
-echo -e "${BIYellow} ┌────────────────────── SSH MENU ──────────────────────┐${NC}"
+echo -e "${BIYellow} ┌────────────────────── SSH MENU" | lolcat "${BIYellow}──────────────────────┐${NC}"
 echo -e ""
 echo -e "  ${BICyan}[${BIWhite}1${BICyan}] Add Account SSH      \t${BICyan}[${BIWhite}5${BICyan}] Multilogin SSH     "
 echo -e "  ${BICyan}[${BIWhite}2${BICyan}] Delete Account SSH   \t${BICyan}[${BIWhite}6${BICyan}] Auto Delete user Exp"
