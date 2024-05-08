@@ -240,11 +240,11 @@ case $opt in
 1) clear ; tambah ;;
 2) clear ; del ;;
 3) clear ; renew;;
-4) clear ; ubahpw ;;
-5) clear ; ubahuser ;;
-6) clear ; block ;;
-7) clear ; unbloc ;;
-8) clear ; member ;;
+4) clear ; member ;;
+5) clear ; ubahpw ;;
+6) clear ; ubahuser ;;
+7) clear ; block ;;
+8) clear ; unbloc ;;
 0) clear ; menu ;;
 x) exit ;;
 *) echo -e "" ; echo "Press any key to back on menu" ; sleep 1 ; menu ;;
