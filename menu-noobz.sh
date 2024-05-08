@@ -143,11 +143,11 @@ echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━�
 echo
 read -p "Username : " username
 if noobzvpns --info-user "$username" > /dev/null 2>&1; then
-    read -p "Tambah (hari) : " tambah
+    read -p "Tambah (hari) : " hari
     cat /etc/noobzvpns/users.json | grep -i "$username" > /tmp/datalogin.txt
     cat /tmp/datalogin.txt | grep -o '"expired":[0-9]*' | cut -d":" -f2 > /tmp/dataexp.txt
  #  cat /tmp/datalogin.txt | grep -o '"issued":"[0-9]*"' | cut -d":" -f2 | tr -d '"' > /tmp/datatgl.txt
-    tam=$(tambah)
+    tam=$(hari)
     expire=$(< /tmp/dataexp.txt)
     exp=$((expire + tamb))
     noobzvpns --expired-user $username $exp
