@@ -197,6 +197,14 @@ vless=$(grep -c -E "^#vlsg $user" "/etc/xray/config.json")
 tr=$(grep -c -E "^#trg $user" "/etc/xray/config.json")
 ss=$(grep -c -E "^#ssg $user" "/etc/xray/config.json")
 ssh="$(awk -F: '$3 >= 1000 && $1 != "nobody" {print $1}' /etc/passwd | wc -l)"
+systemctl status noobzvpns.service | grep -i 'Active' > /tmp/st-noob.txt
+#if cat /tmp/st-noob.txt | awk '{print $3}' ="(running)" then
+if grep -q "running" /tmp/st-noob.txt; then
+$noob=${green}ON${NC}
+else
+$noob=${red}OFF${NC}
+fi
+
 # Getting CPU Information
 cpu_usage1="$(ps aux | awk 'BEGIN {sum=0} {sum+=$3}; END {print sum}')"
 cpu_usage="$((${cpu_usage1/\.*/} / ${corediilik:-1}))"
@@ -221,7 +229,7 @@ echo -e "${BICyan} └───────────────────�
 echo -e "${BIBlue} ┌»»»»»»»»»»»»»»»»»»»»»»${BIGreen} Status Service ${NC}${BIBlue}««««««««««««««««««««««««┐"
 #echo -e "| \t\t\t\t\t\t\t\t|"
 echo -e "${BIBlue} |     ${BICyan} SSH ${NC}: $ressh"" ${BICyan} NGINX ${NC}: $resngx"" ${BICyan}  XRAY ${NC}: $resv2r"" ${BICyan} TROJAN ${NC}: $resv2r \t\t${BIBlue}|"
-echo -e "${BIBlue} |         ${BICyan} DROPBEAR ${NC}: $resdbr" "${BICyan} SSH-WS ${NC}: $ressshws" ${BICyan}Stunnel ${NC}: $resst"\t\t${BIBlue}|"
+echo -e "${BIBlue} |         ${BICyan} DROPBEAR ${NC}: $resdbr" "${BICyan} SSH-WS ${NC}: $ressshws" "${BICyan}NoobVpn ${NC}: $noob" ${BICyan}Stunnel ${NC}: $resst "\t${BIBlue}|"
 echo -e "${BIBlue} └«««««««««««««««««««««««««««««««««»»»»»»»»»»»»»»»»»»»»»»»»»»»»»┘"
 #echo -e " "
 echo -e "${BIGreen} ┌──────────────────────── Menu SSH/XRAY ───────────────────────┐${NC}"
