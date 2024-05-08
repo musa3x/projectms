@@ -107,30 +107,37 @@ menu-noobz
 
 }
 function member(){
-clear
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "                 MEMBER SSH               " | lolcat
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"      
-echo "USERNAME          EXP DATE          STATUS"
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-while read expired
-do
-cat /etc/noobzvpns/users.json > /tmp/datalogin.txt
-cat /tmp/datalogin.txt | grep -o '"musa"' | tr -d '"' > /tmp/usr.txt
-cat /tmp/datalogin.txt | grep -o '"expired":[0-9]*' | cut -d":" -f2 > /tmp/dataexp.txt
-cat /tmp/datalogin.txt | grep -o '"issued":"[0-9]*"' | cut -d":" -f2 | tr -d '"' > /tmp/datatgl.txt
-usr='cat /tmp/usr.txt';
-expired='cat /tmp/dataexp.txt';
-tgl='cat /tmp/datatgl.txt';
-printf "%-17s %2s %-17s %2s \n" "$usr"  "$expired     "
-done < /tmp/jlh
-JUMLAH="$(awk -F: '$3 >= 1000 && $1 != "nobody" {print $1}' /tmp/jlh| wc -l)"
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo "Account number: $JUMLAH user" | lolcat
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-read -n 1 -s -r -p "Press any key to back on menu"
-menu-noobz
-}
+    clear
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "                 MEMBER SSH               " | lolcat
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"      
+    echo "USERNAME          EXP DATE          STATUS"
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+
+    # Proses membaca dan menampilkan data
+    while read -r expired; do
+        # Menyimpan data ke file sementara
+        cat /etc/noobzvpns/users.json > /tmp/datalogin.txt
+        
+        # Mengambil username
+        usr=$(grep -o '"musa"' /tmp/datalogin.txt | tr -d '"')
+        
+        # Mengambil tanggal expired
+        expired=$(grep -o '"expired":[0-9]*' /tmp/datalogin.txt | cut -d":" -f2)
+        
+        # Mengambil tanggal penerbitan
+        tgl=$(grep -o '"issued":"[0-9]*"' /tmp/datalogin.txt | cut -d":" -f2 | tr -d '"')
+        
+        # Menampilkan data
+        printf "%-17s %2s %-17s %2s \n" "$usr" "$expired" "$tgl"
+    done < /tmp/jlh
+
+    # Menghitung jumlah akun
+    JUMLAH=$(awk -F: '$3 >= 1000 && $1 != "nobody" {print $1}' /tmp/jlh | wc -l)
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo "Account number: $JUMLAH user" | lolcat
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 function renew(){
 clear
 clear
