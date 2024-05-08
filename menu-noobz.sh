@@ -115,6 +115,73 @@ function member(){
 read -n 1 -s -r -p "Press any key to back on menu"
 menu-noobz
 }
+function block(){
+    clear
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "                 Block User               " | lolcat
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" 
+    read -p "Nama user : " Pengguna
+    noobzvpns --block-user $pengguna
+read -n 1 -s -r -p "Press any key to back on menu"
+menu-noobz
+}
+function unblock(){
+    clear
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "                 Unblock User               " | lolcat
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" 
+    read -p "Nama user : " Pengguna
+    noobzvpns --unblock-user $pengguna
+read -n 1 -s -r -p "Press any key to back on menu"
+menu-noobz
+}
+function ubahpw(){
+    clear
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "                 Ubah Password               " | lolcat
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" 
+    read -p "Nama user : " Pengguna
+    cat /etc/noobzvpns/users.json | jq -r ".$Pengguna" > /tmp/datalogin.txt
+    if [ $(wc -c < /tmp/datalogin.txt) -gt 10 ]; then
+    read -p "Password Baru : " pwbaru
+    noobzvpns --password-user $Pengguna $pwbaru
+    echo "Ubah Password $Pengguna menjadi $pwbaru berhasil."
+    else
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "              Ubah Password                 "| lolcat
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"  
+    echo -e ""
+    echo -e "  User Tidak Ditemukan     "| lolcat
+    echo -e ""
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    fi
+read -n 1 -s -r -p "Press any key to back on menu"
+menu-noobz
+}
+
+function ubahuser(){
+    clear
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "                 UBAH USERNAME              " | lolcat
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" 
+    read -p "Nama user : " Pengguna
+    cat /etc/noobzvpns/users.json | jq -r ".$Pengguna" > /tmp/datalogin.txt
+    if [ $(wc -c < /tmp/datalogin.txt) -gt 10 ]; then
+    read -p "Nama User Baru : " userbaru
+    noobzvpns --rename-user $Pengguna $userbaru
+    echo "Ubah user $Pengguna Menjadi $userbaru berhasil."
+    else
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "              UBAH USERNAME                "| lolcat
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"  
+    echo -e ""
+    echo -e "  User Tidak Ditemukan     "| lolcat
+    echo -e ""
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    fi
+read -n 1 -s -r -p "Press any key to back on menu"
+menu-noobz
+}
 
 function renew(){
 clear
@@ -159,10 +226,10 @@ menu-noobz
 clear
 echo -e "${BIYellow} ┌────────────── ${BIGreen}MENU NoobzVpn ${BIYellow}──────────────┐${NC}"
 echo -e ""
-echo -e "  ${BICyan}[${BIWhite}1${BICyan}] Add Account   "    
-echo -e "  ${BICyan}[${BIWhite}2${BICyan}] Delete Account" 
-echo -e "  ${BICyan}[${BIWhite}3${BICyan}] Renew Account  " 
-echo -e "  ${BICyan}[${BIWhite}4${BICyan}] list user     "
+echo -e "  ${BICyan}[${BIWhite}1${BICyan}] Add Account   \t${BICyan}[${BIWhite}5${BICyan}] ubah password    "    
+echo -e "  ${BICyan}[${BIWhite}2${BICyan}] Delete Account \t${BICyan}[${BIWhite}6${BICyan}] ubah username   " 
+echo -e "  ${BICyan}[${BIWhite}3${BICyan}] Renew Account  \t${BICyan}[${BIWhite}7${BICyan}] Block User  " 
+echo -e "  ${BICyan}[${BIWhite}4${BICyan}] list user     \t${BICyan}[${BIWhite}8${BICyan}] Unblock User   "
 echo -e " ${BIYellow}└──────────────────────────────────────┘${NC}"
 echo -e "     ${BIYellow}Tekan x atau [ Ctrl+C ] • ${BIWhite}untuk Keluar${NC}"
 echo -e "     ${BIBlue}Tekan Enter untuk kembali ke • ${BIWhite}menu utama ${NC}"
@@ -173,7 +240,11 @@ case $opt in
 1) clear ; tambah ;;
 2) clear ; del ;;
 3) clear ; renew;;
-4) clear ; member ;;
+4) clear ; ubahpw ;;
+5) clear ; ubahuser ;;
+6) clear ; block ;;
+7) clear ; unbloc ;;
+8) clear ; member ;;
 0) clear ; menu ;;
 x) exit ;;
 *) echo -e "" ; echo "Press any key to back on menu" ; sleep 1 ; menu ;;
