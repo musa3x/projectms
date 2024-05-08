@@ -127,7 +127,7 @@ if noobzvpns --info-user "$username" > /dev/null 2>&1; then
     read -p "Tambah (hari) : " hari
   #  cat /etc/noobzvpns/users.json | grep -i "$username" > /tmp/datalogin.txt
     cat /etc/noobzvpns/users.json | jq -r ".$username" > /tmp/datalogin.txt
-    cat /tmp/datalogin.txt | | jq '.expired' > /tmp/dataexp.txt
+    cat /tmp/datalogin.txt | jq '.expired' > /tmp/dataexp.txt
  #  cat /tmp/datalogin.txt | grep -o '"issued":"[0-9]*"' | cut -d":" -f2 | tr -d '"' > /tmp/datatgl.txt
     expire=$(cat /tmp/dataexp.txt)
     exp=($expire + $hari)
