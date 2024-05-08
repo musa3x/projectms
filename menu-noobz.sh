@@ -141,7 +141,7 @@ echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━�
 echo -e "               RENEW  USER                " | lolcat
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"  
 echo
-read -p "Username : " User
+read -p "Username : " user
 if noobzvpns --info-user "$user" > /dev/null 2>&1; then
 read -p "Tambah (hari) : " tambah
 cat /etc/noobzvpns/users.json | grep -i $user > /tmp/datalogin.txt
