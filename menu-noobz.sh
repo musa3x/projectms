@@ -84,6 +84,7 @@ echo "nama : $nama ; password : $pass ; masa aktif : $exp ."
 read -n 1 -s -r -p "Press any key to back on menu"
 menu-noobz
 }
+
 function del(){
 clear
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
@@ -102,7 +103,6 @@ else
 fi
 
 read -n 1 -s -r -p "Press any key to back on menu"
-
 menu-noobz
 
 }
