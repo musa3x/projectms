@@ -109,30 +109,11 @@ menu-noobz
 function member(){
     clear
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo -e "                 MEMBER SSH               " | lolcat
-    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"      
-    echo "USERNAME          EXP DATE          STATUS"
-    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-
-    # Proses membaca dan menampilkan data
-    while read -r expired; do
-        # Menyimpan data ke file sementara
-        cat /etc/noobzvpns/users.json > /tmp/datalogin.txt
-        # Mengambil username
-        usr=$(grep -o '"musa"' /tmp/datalogin.txt | tr -d '"')
-        # Mengambil tanggal expired
-        expired=$(grep -o '"expired":[0-9]*' /tmp/datalogin.txt | cut -d":" -f2)
-        # Mengambil tanggal penerbitan
-        tgl=$(grep -o '"issued":"[0-9]*"' /tmp/datalogin.txt | cut -d":" -f2 | tr -d '"')
-        # Menampilkan data
-        printf "%-17s %2s %-17s %2s \n" "$usr" "$expired" "$tgl"
-    done < /etc/passwd
-
-    # Menghitung jumlah akun
-    JUMLAH=$(awk -F: '$3 >= 1000 && $1 != "nobody" {print $1}' /etc/passwd | wc -l)
-    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo "Account number: $JUMLAH user" | lolcat
-    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "                 MEMBER NoobzVpn               " | lolcat
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" 
+    noobzvpns --info-all-user
+read -n 1 -s -r -p "Press any key to back on menu"
+menu-noobz
 }
 
 function renew(){
