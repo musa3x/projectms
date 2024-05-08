@@ -115,7 +115,7 @@ function member(){
 read -n 1 -s -r -p "Press any key to back on menu"
 menu-noobz
 }
-function block(){
+function blockusr(){
     clear
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo -e "                 Block User               " | lolcat
@@ -245,7 +245,7 @@ case $opt in
 4) clear ; member ;;
 5) clear ; ubahpw ;;
 6) clear ; ubahuser ;;
-7) clear ; block ;;
+7) clear ; blockusr;;
 8) clear ; unbloc ;;
 0) clear ; menu ;;
 x) exit ;;
