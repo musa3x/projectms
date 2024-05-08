@@ -119,7 +119,7 @@ menu-noobz
 function renew(){
 clear
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "               RENEW  USER                " | lolcat
+echo -e "               PERPANJANGAN USER                " | lolcat
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"  
 echo
 read -p "Username : " username
@@ -139,8 +139,7 @@ echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━�
 echo -e ""
 echo -e " nama user : $username"
 echo -e " bertambah : $hari hari"
-echo -e " Expire dalam  :  $exp hari"
-echo -e " Expire  :  $expire hari"
+echo -e " Expire Menjadi  :  $exp hari"
 echo -e ""
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"    
 else
