@@ -136,10 +136,9 @@ function member(){
     JUMLAH=$(awk -F: '$3 >= 1000 && $1 != "nobody" {print $1}' /tmp/jlh | wc -l)
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo "Account number: $JUMLAH user" | lolcat
-    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 
 function renew(){
-clear
 clear
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "               RENEW  USER                " | lolcat
