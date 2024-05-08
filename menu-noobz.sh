@@ -126,10 +126,10 @@ function member(){
         tgl=$(grep -o '"issued":"[0-9]*"' /tmp/datalogin.txt | cut -d":" -f2 | tr -d '"')
         # Menampilkan data
         printf "%-17s %2s %-17s %2s \n" "$usr" "$expired" "$tgl"
-    done < //tmp/jlh.txt
+    done < /etc/passwd
 
     # Menghitung jumlah akun
-    JUMLAH=$(awk -F: '$3 >= 1000 && $1 != "nobody" {print $1}' /tmp/jlh.txt | wc -l)
+    JUMLAH=$(awk -F: '$3 >= 1000 && $1 != "nobody" {print $1}' /etc/passwd | wc -l)
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo "Account number: $JUMLAH user" | lolcat
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
@@ -147,11 +147,9 @@ if noobzvpns --info-user "$username" > /dev/null 2>&1; then
     cat /etc/noobzvpns/users.json | grep -i "$username" > /tmp/datalogin.txt
     cat /tmp/datalogin.txt | grep -o '"expired":[0-9]*' | cut -d":" -f2 > /tmp/dataexp.txt
  #  cat /tmp/datalogin.txt | grep -o '"issued":"[0-9]*"' | cut -d":" -f2 | tr -d '"' > /tmp/datatgl.txt
-    cat /tmp/dataexp.txt
-    expire=$(cat /tmp/dataexp.txt)
-    expired=$((expire))
-    tam=$((tambah))
-    exp=$((expired + tam))
+    tam=$(tambah)
+    expire=$(< /tmp/dataexp.txt)
+    exp=$((expire + tamb))
     noobzvpns --expired-user "$username" "$exp"
 clear
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
