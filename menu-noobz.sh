@@ -159,6 +159,7 @@ echo -e ""
 echo -e " nama user : $User"
 echo -e " bertambah : $tambah hari"
 echo -e " Expire dalam  :  $exp hari"
+echo -e " Expired  :  $expired hari"
 echo -e ""
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"    
 else
