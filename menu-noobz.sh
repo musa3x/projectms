@@ -124,7 +124,7 @@ echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━�
 echo
 read -p "Username : " username
 cat /etc/noobzvpns/users.json | jq -r ".$username" > /tmp/datalogin.txt
-if [  -s /tmp/datalogin.txt ]; then
+if [ $(wc -c < /tmp/datalogin.txt) -gt 10 ]; then
     read -p "Tambah (hari) : " hari
   #  cat /etc/noobzvpns/users.json | grep -i "$username" > /tmp/datalogin.txt
     cat /tmp/datalogin.txt | jq '.expired' > /tmp/dataexp.txt
