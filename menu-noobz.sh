@@ -149,7 +149,7 @@ cat /tmp/datalogin.txt | grep -o '"expired":[0-9]*' | cut -d":" -f2 > /tmp/datae
 cat /tmp/datalogin.txt | grep -o '"issued":"[0-9]*"' | cut -d":" -f2 | tr -d '"' > /tmp/datatgl.txt
 expired='cat /tmp/dataexp.txt';
 tgl='cat /tmp/datatgl.txt';
-exp= $expired + $tambah;
+exp=$((expired + tambah))
 noobzvpns --expired-user $nama $exp
 clear
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
