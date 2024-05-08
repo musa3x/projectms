@@ -128,9 +128,8 @@ if noobzvpns --info-user "$username" > /dev/null 2>&1; then
     cat /etc/noobzvpns/users.json | grep -i "$username" > /tmp/datalogin.txt
     cat /tmp/datalogin.txt | grep -o '"expired":[0-9]*' | cut -d":" -f2 > /tmp/dataexp.txt
  #  cat /tmp/datalogin.txt | grep -o '"issued":"[0-9]*"' | cut -d":" -f2 | tr -d '"' > /tmp/datatgl.txt
-    tam=$hari
     expire=$(< /tmp/dataexp.txt)
-    exp=($expire + $tam)
+    exp=($expire + $hari)
     noobzvpns --expired-user $username $exp
 clear
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
@@ -138,9 +137,8 @@ echo -e "               RENEW  USER               " | lolcat
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"  
 echo -e ""
 echo -e " nama user : $username"
-echo -e " bertambah : $tam hari"
+echo -e " bertambah : $hari hari"
 echo -e " Expire dalam  :  $exp hari"
-echo -e " Expired  :  $expired hari"
 echo -e ""
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"    
 else
