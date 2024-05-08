@@ -129,7 +129,7 @@ if noobzvpns --info-user "$username" > /dev/null 2>&1; then
     cat /etc/noobzvpns/users.json | jq -r ".$username" > /tmp/datalogin.txt
     cat /tmp/datalogin.txt | jq '.expired' > /tmp/dataexp.txt
  #  cat /tmp/datalogin.txt | grep -o '"issued":"[0-9]*"' | cut -d":" -f2 | tr -d '"' > /tmp/datatgl.txt
-    expire='cat /tmp/dataexp.txt'
+    expire=`cat /tmp/dataexp.txt`
     exp=($expire + $hari)
     noobzvpns --expired-user $username $exp
 clear
