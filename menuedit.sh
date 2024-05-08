@@ -227,7 +227,7 @@ echo -e "${BIBlue} └«««««««««««««««««««««««««««««
 echo -e "${BIGreen} ┌──────────────────────── Menu SSH/XRAY ───────────────────────┐${NC}"
 #echo -e "${BICyan}                  ${BIYellow}${UWhite}»»» Menu SSH/XRAY «««${NC}\t\t\t\t${BICyan}"
 #echo -e " "
-echo -e "${BIGreen} |  ${BICyan}[${BIYellow}01${BICyan}] SSH-WS      ${WB}[${GB}${ssh}${WB}] \t\t${BICyan}[${BIYellow}06${BICyan}] NoobzVpn  \t${BIGreen}|" 
+echo -e "${BIGreen} |  ${BICyan}[${BIYellow}01${BICyan}] SSH-WS      ${WB}[${GB}${ssh}${WB}] \t\t${BICyan}[${BIYellow}06${BICyan}] NoobzVpn  \t\t${BIGreen}|" 
 echo -e "${BIGreen} |  ${BICyan}[${BIYellow}02${BICyan}] VMESS       ${WB}[${GB}${vmess}${WB}] \t\t${BICyan}[${BIYellow}07${BICyan}] ADD HOST/DOMAIN \t${BIGreen}|"    
 echo -e "${BIGreen} |  ${BICyan}[${BIYellow}03${BICyan}] VLESS       ${WB}[${GB}${vless}${WB}] \t\t${BICyan}[${BIYellow}08${BICyan}] RENEW CERT  \t${BIGreen}|"    
 echo -e "${BIGreen} |  ${BICyan}[${BIYellow}04${BICyan}] TROJAN      ${WB}[${GB}${tr}${WB}] \t\t${BICyan}[${BIYellow}09${BICyan}] EDIT BANNER \t${BIGreen}|" 
