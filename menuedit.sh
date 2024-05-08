@@ -197,12 +197,10 @@ vless=$(grep -c -E "^#vlsg $user" "/etc/xray/config.json")
 tr=$(grep -c -E "^#trg $user" "/etc/xray/config.json")
 ss=$(grep -c -E "^#ssg $user" "/etc/xray/config.json")
 ssh="$(awk -F: '$3 >= 1000 && $1 != "nobody" {print $1}' /etc/passwd | wc -l)"
-systemctl status noobzvpns.service | grep -i 'Active' > /tmp/st-noob.txt
-#if cat /tmp/st-noob.txt | awk '{print $3}' ="(running)" then
-if [ "$(cat /tmp/st-noob.txt | awk '{print $3}')" = "(running)" ]; then
-$noob=${green}ON${NC}
+if grep -q "running" /tmp/st-noob.txt && [ "$(awk '{print $3}' /tmp/st-noob.txt)" = "(running)" ]; then
+    noob="${green}ON${NC}"
 else
-$noob=${red}OFF${NC}
+    noob="${red}OFF${NC}"
 fi
 
 # Getting CPU Information
@@ -228,8 +226,8 @@ echo -e "${BICyan} │  ${YB}Total Bandwidth \t${BIWhite}: ${YB}$monthly_usage $
 echo -e "${BICyan} └──────────────────────────────────────────────────────────────┘${NC}"
 echo -e "${BIBlue} ┌»»»»»»»»»»»»»»»»»»»»»»${BIGreen} Status Service ${NC}${BIBlue}««««««««««««««««««««««««┐"
 #echo -e "| \t\t\t\t\t\t\t\t|"
-echo -e "${BIBlue} |     ${BICyan} SSH ${NC}: $ressh"" ${BICyan} NGINX ${NC}: $resngx"" ${BICyan}  XRAY ${NC}: $resv2r"" ${BICyan} TROJAN ${NC}: $resv2r \t\t${BIBlue}|"
-echo -e "${BIBlue} |     ${BICyan} DROPBEAR ${NC}: $resdbr" "${BICyan} SSH-WS ${NC}: $ressshws" "${BICyan}NoobVpn ${NC}: $noob" ${BICyan}Stunnel ${NC}: $resst "\t${BIBlue}|"
+echo -e "${BIBlue} |       ${BICyan} SSH ${NC}: $ressh"" ${BICyan} NGINX ${NC}: $resngx"" ${BICyan}  XRAY ${NC}: $resv2r"" ${BICyan} TROJAN ${NC}: $resv2r \t\t${BIBlue}|"
+echo -e "${BIBlue} |    ${BICyan} DROPBEAR ${NC}: $resdbr" "${BICyan} SSH-WS ${NC}: $ressshws" "${BICyan}NoobVpn ${NC}: $noob" ${BICyan}Stunnel ${NC}: $resst "\t${BIBlue}|"
 echo -e "${BIBlue} └«««««««««««««««««««««««««««««««««»»»»»»»»»»»»»»»»»»»»»»»»»»»»»┘"
 #echo -e " "
 echo -e "${BIGreen} ┌──────────────────────── Menu SSH/XRAY ───────────────────────┐${NC}"
