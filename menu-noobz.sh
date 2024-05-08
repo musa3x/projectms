@@ -150,7 +150,7 @@ if noobzvpns --info-user "$username" > /dev/null 2>&1; then
     tam=$(tambah)
     expire=$(< /tmp/dataexp.txt)
     exp=$((expire + tamb))
-    noobzvpns --expired-user "$username" "$exp"
+    noobzvpns --expired-user $username $exp
 clear
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "               RENEW  USER               " | lolcat
