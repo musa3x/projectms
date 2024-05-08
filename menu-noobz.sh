@@ -182,10 +182,10 @@ menu-noobz
 clear
 echo -e "${BIYellow} ┌────────────── ${BIGreen}MENU NoobzVpn ${BIYellow}──────────────┐${NC}"
 echo -e ""
-echo -e "  ${BICyan}[${BIWhite}1${BICyan}] Add Account SSH  "    
-echo -e "  ${BICyan}[${BIWhite}2${BICyan}] Delete Account SSH" 
-echo -e "  ${BICyan}[${BIWhite}3${BICyan}] Renew Account SSH  " 
-echo -e "  ${BICyan}[${BIWhite}4${BICyan}] Check User SSH     "
+echo -e "  ${BICyan}[${BIWhite}1${BICyan}] Add Account   "    
+echo -e "  ${BICyan}[${BIWhite}2${BICyan}] Delete Account" 
+echo -e "  ${BICyan}[${BIWhite}3${BICyan}] Renew Account  " 
+echo -e "  ${BICyan}[${BIWhite}4${BICyan}] list user     "
 echo -e " ${BIYellow}└──────────────────────────────────────┘${NC}"
 echo -e "     ${BIYellow}Tekan x atau [ Ctrl+C ] • ${BIWhite}untuk Keluar${NC}"
 echo -e "     ${BIBlue}Tekan Enter untuk kembali ke • ${BIWhite}menu utama ${NC}"
@@ -196,7 +196,7 @@ case $opt in
 1) clear ; tambah ;;
 2) clear ; del ;;
 3) clear ; renew;;
-4) clear ; cek ;;
+4) clear ; member ;;
 0) clear ; menu ;;
 x) exit ;;
 *) echo -e "" ; echo "Press any key to back on menu" ; sleep 1 ; menu ;;
