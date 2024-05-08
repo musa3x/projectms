@@ -147,8 +147,8 @@ read -p "Tambah (hari) : " tambah
 cat /etc/noobzvpns/users.json | grep -i $user > /tmp/datalogin.txt
 cat /tmp/datalogin.txt | grep -o '"expired":[0-9]*' | cut -d":" -f2 > /tmp/dataexp.txt
 cat /tmp/datalogin.txt | grep -o '"issued":"[0-9]*"' | cut -d":" -f2 | tr -d '"' > /tmp/datatgl.txt
-expired='cat /tmp/dataexp.txt';
-tgl='cat /tmp/datatgl.txt';
+expired=$(cat /tmp/dataexp.txt)
+tgl=$(cat /tmp/datatgl.txt)
 exp=$((expired + tambah))
 noobzvpns --expired-user $nama $exp
 clear
