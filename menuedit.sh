@@ -197,12 +197,12 @@ vless=$(grep -c -E "^#vlsg $user" "/etc/xray/config.json")
 tr=$(grep -c -E "^#trg $user" "/etc/xray/config.json")
 ss=$(grep -c -E "^#ssg $user" "/etc/xray/config.json")
 ssh="$(awk -F: '$3 >= 1000 && $1 != "nobody" {print $1}' /etc/passwd | wc -l)"
+systemctl status noobzvpns.service | grep -i 'Active' > /tmp/st-noob.txt
 if grep -q "running" /tmp/st-noob.txt && [ "$(awk '{print $3}' /tmp/st-noob.txt)" = "(running)" ]; then
     noob="${green}ON${NC}"
 else
     noob="${red}OFF${NC}"
 fi
-
 # Getting CPU Information
 cpu_usage1="$(ps aux | awk 'BEGIN {sum=0} {sum+=$3}; END {print sum}')"
 cpu_usage="$((${cpu_usage1/\.*/} / ${corediilik:-1}))"
