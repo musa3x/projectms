@@ -121,7 +121,8 @@ function block(){
     echo -e "                 Block User               " | lolcat
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" 
     read -p "Nama user : " Pengguna
-    noobzvpns --block-user $pengguna
+    noobzvpns --block-user $Pengguna
+    echo "block $Pengguna berhasil."
 read -n 1 -s -r -p "Press any key to back on menu"
 menu-noobz
 }
@@ -131,7 +132,8 @@ function unblock(){
     echo -e "                 Unblock User               " | lolcat
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" 
     read -p "Nama user : " Pengguna
-    noobzvpns --unblock-user $pengguna
+    noobzvpns --unblock-user $Pengguna
+    echo "Unblock $Pengguna berhasil."
 read -n 1 -s -r -p "Press any key to back on menu"
 menu-noobz
 }
