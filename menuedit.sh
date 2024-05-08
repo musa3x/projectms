@@ -227,18 +227,18 @@ echo -e "${BIBlue} └«««««««««««««««««««««««««««««
 echo -e "${BIGreen} ┌──────────────────────── Menu SSH/XRAY ───────────────────────┐${NC}"
 #echo -e "${BICyan}                  ${BIYellow}${UWhite}»»» Menu SSH/XRAY «««${NC}\t\t\t\t${BICyan}"
 #echo -e " "
-echo -e "${BIGreen} |  ${BICyan}[${BIYellow}01${BICyan}] SSH-WS      ${WB}[${GB}${ssh}${WB}] \t\t${BICyan}[${BIYellow}06${BICyan}] ADD HOST/DOMAIN \t${BIGreen}|" 
-echo -e "${BIGreen} |  ${BICyan}[${BIYellow}02${BICyan}] VMESS       ${WB}[${GB}${vmess}${WB}] \t\t${BICyan}[${BIYellow}07${BICyan}] RENEW CERT \t${BIGreen}|"    
-echo -e "${BIGreen} |  ${BICyan}[${BIYellow}03${BICyan}] VLESS       ${WB}[${GB}${vless}${WB}] \t\t${BICyan}[${BIYellow}08${BICyan}] EDIT BANNER \t${BIGreen}|"    
-echo -e "${BIGreen} |  ${BICyan}[${BIYellow}04${BICyan}] TROJAN      ${WB}[${GB}${tr}${WB}] \t\t${BICyan}[${BIYellow}09${BICyan}] RUNNING STATUS \t${BIGreen}|" 
-echo -e "${BIGreen} |  ${BICyan}[${BIYellow}05${BICyan}] SHADOWSOCKS ${WB}[${GB}${ss}${WB}] \t\t${BICyan}[${BIYellow}10${BICyan}] USER BANDWIDTH \t${BIGreen}|"   
+echo -e "${BIGreen} |  ${BICyan}[${BIYellow}01${BICyan}] SSH-WS      ${WB}[${GB}${ssh}${WB}] \t\t${BICyan}[${BIYellow}06${BICyan}] NoobzVpn  \t${BIGreen}|" 
+echo -e "${BIGreen} |  ${BICyan}[${BIYellow}02${BICyan}] VMESS       ${WB}[${GB}${vmess}${WB}] \t\t${BICyan}[${BIYellow}07${BICyan}] ADD HOST/DOMAIN \t${BIGreen}|"    
+echo -e "${BIGreen} |  ${BICyan}[${BIYellow}03${BICyan}] VLESS       ${WB}[${GB}${vless}${WB}] \t\t${BICyan}[${BIYellow}08${BICyan}] RENEW CERT  \t${BIGreen}|"    
+echo -e "${BIGreen} |  ${BICyan}[${BIYellow}04${BICyan}] TROJAN      ${WB}[${GB}${tr}${WB}] \t\t${BICyan}[${BIYellow}09${BICyan}] EDIT BANNER \t${BIGreen}|" 
+echo -e "${BIGreen} |  ${BICyan}[${BIYellow}05${BICyan}] SHADOWSOCKS ${WB}[${GB}${ss}${WB}] \t\t${BICyan}[${BIYellow}10${BICyan}] RUNNING STATUS \t${BIGreen}|"   
 echo -e "${BIGreen} └──────────────────────────────────────────────────────────────┘${NC}"
 echo -e "${IGreen} ┌──────────────────────── Menu Service ────────────────────────┐${NC}"
 #echo -e "${BICyan}                  ${BIYellow}${UWhite}»»» Menu Service «««${NC}"
 #echo -e " "
 echo -e "${IGreen} |  ${BICyan}[${BIYellow}11${BICyan}] SPEEDTEST       \t\t${BICyan}[${BIYellow}18${BICyan}] TENDANG \t\t${IGreen}|"
 echo -e "${IGreen} |  ${BICyan}[${BIYellow}12${BICyan}] CHECK BANDWIDTH \t\t${BICyan}[${BIYellow}19${BICyan}] XRAY-CORE MENU \t${IGreen}|"
-echo -e "${IGreen} |  ${BICyan}[${BIYellow}13${BICyan}] LIMIT SPEED     \t\t${BICyan}[${BIYellow}20${BICyan}] SWAPRAM MENU \t${IGreen}|"
+echo -e "${IGreen} |  ${BICyan}[${BIYellow}13${BICyan}] LIMIT SPEED     \t\t${BICyan}[${BIYellow}20${BICyan}] USER BANDWIDTH \t${IGreen}|"
 echo -e "${IGreen} |  ${BICyan}[${BIYellow}14${BICyan}] INFO SCRIPT     \t\t${BICyan}[${BIYellow}21${BICyan}] BACKUP USER \t${IGreen}|" 
 echo -e "${IGreen} |  ${BICyan}[${BIYellow}15${BICyan}] CLEAR LOG       \t\t${BICyan}[${BIYellow}22${BICyan}] RESTORE USER \t${IGreen}|" 
 echo -e "${IGreen} |  ${BICyan}[${BIYellow}16${BICyan}] TASK MANAGER    \t\t${BICyan}[${BIYellow}23${BICyan}] INSTALL SLOWDNS \t${IGreen}|"
@@ -261,11 +261,11 @@ case $opt in
 3) clear ; menu-vless ;;
 4) clear ; menu-trojan ;;
 5) clear ; menu-ss ;;
-6) clear ; addhost ;;
-7) clear ; genssl ;;
-8) clear ; nano /etc/issue.net ;;
-9) clear ; running ;;
-10) clear ; cek-trafik ;;
+6) clear ; menu-noobz ;;
+7) clear ; addhost ;;
+8) clear ; genssl ;;
+9) clear ; nano /etc/issue.net ;; 
+10) clear ; running ;;
 
 11) clear ; cek-speed ;;
 12) clear ; cek-bandwidth ;;
@@ -276,7 +276,7 @@ case $opt in
 17) clear ; dns ;;
 18) clear ; tendang ;;
 19) clear ; wget -q -O /usr/bin/xraychanger "https://raw.githubusercontent.com/NevermoreSSH/Xcore-custompath/main/xraychanger.sh" && chmod +x /usr/bin/xraychanger && xraychanger ;;
-20) clear ; wget -q -O /usr/bin/swapram "https://raw.githubusercontent.com/NevermoreSSH/swapram/main/swapram.sh" && chmod +x /usr/bin/swapram && swapram ;;
+20) clear ; cek-trafik ;;
 21) clear ; backup ;;
 22) clear ; restore ;;
 23) clear ; wget https://raw.githubusercontent.com/NevermoreSSH/Vergil/main2/addons/dns2.sh && chmod +x dns2.sh && ./dns2.sh ;;
