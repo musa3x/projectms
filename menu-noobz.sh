@@ -111,7 +111,7 @@ function member(){
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo -e "            LIST MEMBER NoobzVpn               " | lolcat
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" 
-    echo -e "   NAMA       EXPIRE     STATUS  " | lolcat
+    echo -e "   NAMA        EXPIRE      STATUS  " | lolcat
     echo -e "\033[0;34m-------------------------------------------\033[0m" 
    # noobzvpns --info-all-user
    noobzvpns --info-all-user > /tmp/noobuser.txt
