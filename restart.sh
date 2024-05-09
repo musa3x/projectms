@@ -73,9 +73,10 @@ echo -e "    [3] Restart Dropbear"
 echo -e "    [4] Restart Stunnel5"
 echo -e "    [5] Restart Nginx"
 echo -e "    [6] Restart Badvpn"
+echo -e "    [7] Restart NoobzVPN"
 echo -e "    [x] Menu"
 echo -e ""
-read -p "    Select From Options [1-6 or x] :  " Restart
+read -p "    Select From Options [1-7 or x] :  " Restart
 echo -e ""
 echo -e "======================================"
 sleep 1
@@ -92,6 +93,7 @@ case $Restart in
                 /etc/init.d/fail2ban restart
                 /etc/init.d/cron restart
                 /etc/init.d/nginx restart
+		systemctl restart noobzvpns.service
                 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 1000
                 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 1000
                 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 1000
@@ -99,7 +101,7 @@ case $Restart in
                 echo -e ""
                 echo -e "======================================"
                 echo -e ""
-                echo -e "          Service/s Restarted         "
+                echo -e "          Service/s Restarted         " | lolcat
                 echo -e ""
                 echo -e "======================================"
                 ;;
@@ -109,7 +111,7 @@ case $Restart in
                 echo -e ""
                 echo -e "======================================"
                 echo -e ""
-                echo -e "         SSH Service Restarted        "
+                echo -e "         SSH Service Restarted        "| lolcat
                 echo -e ""
                 echo -e "======================================"
                 ;;
@@ -119,7 +121,7 @@ case $Restart in
                 echo -e ""
                 echo -e "======================================"
                 echo -e ""
-                echo -e "       Dropbear Service Restarted     "
+                echo -e "       Dropbear Service Restarted     "| lolcat
                 echo -e ""
                 echo -e "======================================"
                 ;;
@@ -129,7 +131,7 @@ case $Restart in
                 echo -e ""
                 echo -e "======================================"
                 echo -e ""
-                echo -e "        Stunnel5 Service Restarted    "
+                echo -e "        Stunnel5 Service Restarted    "| lolcat
                 echo -e ""
                 echo -e "======================================"
                 ;;
@@ -139,7 +141,7 @@ case $Restart in
                 echo -e ""
                 echo -e "======================================"
                 echo -e ""
-                echo -e "         Nginx Service Restarted      "
+                echo -e "         Nginx Service Restarted      "| lolcat
                 echo -e ""
                 echo -e "======================================"
                 ;;
@@ -152,7 +154,20 @@ case $Restart in
                 echo -e ""
                 echo -e "======================================"
                 echo -e ""
-                echo -e "    Badvpn  Badvpn Service Restarted  "
+                echo -e "     Badvpn Service Restarted  "| lolcat
+                echo -e ""
+                echo -e "======================================"
+                ;;
+		7)
+                clear
+                screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500
+                screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500
+                screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 500
+                systemctl restart noobzvpns.service
+                echo -e ""
+                echo -e "======================================"
+                echo -e ""
+                echo -e "    NoobzVPN Service Restarted  "| lolcat
                 echo -e ""
                 echo -e "======================================"
                 ;;
