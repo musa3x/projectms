@@ -124,7 +124,7 @@ menu-noobz
 function blockusr(){
     clear
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo -e "                 BLOCK PENGGUNA              " | lolcat
+    echo -e "                BLOCK PENGGUNA              " | lolcat
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" 
     read -p "Nama user : " Pengguna
     cat /etc/noobzvpns/users.json | jq -r ".$Pengguna" > /tmp/datalogin.txt
@@ -134,9 +134,9 @@ function blockusr(){
     else
     clear
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo -e "                 BLOCK PENGGUNA              " | lolcat
+    echo -e "                BLOCK PENGGUNA              " | lolcat
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" 
-    echo "           USER TIDAK DITEMUKAN" | lolcat
+    echo "            USER TIDAK DITEMUKAN" | lolcat
     fi
 read -n 1 -s -r -p "Press any key to back on menu"
 menu-noobz
@@ -144,7 +144,7 @@ menu-noobz
 function unblock(){
     clear
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo -e "                 UNBLOCK PENGGUNA               " | lolcat
+    echo -e "                UNBLOCK PENGGUNA               " | lolcat
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" 
     read -p "Nama user : " Pengguna
      cat /etc/noobzvpns/users.json | jq -r ".$Pengguna" > /tmp/datalogin.txt
@@ -154,9 +154,9 @@ function unblock(){
     else
     clear 
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo -e "                 UNBLOCK PENGGUNA               " | lolcat
+    echo -e "                UNBLOCK PENGGUNA               " | lolcat
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" 
-    echo "           USER TIDAK DITEMUKAN" | lolcat
+    echo "            USER TIDAK DITEMUKAN" | lolcat
     fi
 read -n 1 -s -r -p "Press any key to back on menu"
 menu-noobz
