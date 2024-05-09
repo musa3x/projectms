@@ -203,8 +203,7 @@ if grep -q "running" /tmp/st-noob.txt && [ "$(awk '{print $3}' /tmp/st-noob.txt)
 else
     noob="${red}OFF${NC}"
 fi
-noobzvpns --info-all-user > /tmp/noobuser.txt
-usrnoob= awk '/Total User\(s\)/ { print $3 }' /tmp/noobuser.txt
+usrnoob=$(noobzvpns --info-all-user > /tmp/noobuser.txt && awk '/Total User\(s\)/ { print $3 }' /tmp/noobuser.txt)
 # Getting CPU Information
 cpu_usage1="$(ps aux | awk 'BEGIN {sum=0} {sum+=$3}; END {print sum}')"
 cpu_usage="$((${cpu_usage1/\.*/} / ${corediilik:-1}))"
@@ -232,18 +231,18 @@ echo -e "${BIBlue} |      ${BICyan} SSH ${NC}: $ressh "" ${BICyan} NGINX ${NC}: 
 echo -e "${BIBlue} |${BICyan} DROPBEAR ${NC}: $resdbr  " "${BICyan} SSH-WS ${NC}: $ressshws " "${BICyan} NoobzVpn ${NC}: $noob  " ${BICyan}Stunnel ${NC}: $resst "${BIBlue}|"
 echo -e "${BIBlue} └«««««««««««««««««««««««««««««««««»»»»»»»»»»»»»»»»»»»»»»»»»»»»»┘"
 #echo -e " "
-echo -e "${BIGreen} ┌──────────────────────── Menu Account ───────────────────────┐${NC}"
+echo -e "${BIGreen} ┌───────────────────────── Menu Account ───────────────────────┐${NC}"
 #echo -e "${BICyan}                  ${BIYellow}${UWhite}»»» Menu SSH/XRAY «««${NC}\t\t\t\t${BICyan}"
 #echo -e " "
 echo -e "${BIGreen} |  ${BICyan}[${BIYellow}01${BICyan}] SSH-WS      ${WB}[${GB}${ssh}${WB}]   \t\t${BICyan}[${BIYellow}04${BICyan}] TROJAN      ${WB}[${GB}${tr}${WB}]\t${BIGreen}|" 
 echo -e "${BIGreen} |  ${BICyan}[${BIYellow}02${BICyan}] VMESS       ${WB}[${GB}${vmess}${WB}] \t\t${BICyan}[${BIYellow}05${BICyan}] SHADOWSOCKS ${WB}[${GB}${ss}${WB}]\t${BIGreen}|"    
-echo -e "${BIGreen} |  ${BICyan}[${BIYellow}03${BICyan}] VLESS       ${WB}[${GB}${vless}${WB}] \t\t${BICyan}[${BIYellow}06${BICyan}] NoobzVpn   ${WB}[${GB}${usrnoob}${WB}]\t${BIGreen}|"   
+echo -e "${BIGreen} |  ${BICyan}[${BIYellow}03${BICyan}] VLESS       ${WB}[${GB}${vless}${WB}] \t\t${BICyan}[${BIYellow}06${BICyan}] NoobzVpn     ${WB}[${GB}${usrnoob}${WB}]\t${BIGreen}|"   
 echo -e "${BIGreen} └──────────────────────────────────────────────────────────────┘${NC}"
-echo -e "${IGreen} ┌──────────────────────── Menu Tool ────────────────────────┐${NC}"
+echo -e "${IGreen} ┌────────────────────────── Menu Tool ─────────────────────────┐${NC}"
 #echo -e "${BICyan}                  ${BIYellow}${UWhite}»»» Menu Service «««${NC}"
 #echo -e " "
-echo -e "${IGreen} |  ${BICyan}[${BIYellow}07${BICyan}] ADD HOST/DOMAIN \t\t${BICyan}[${BIYellow}16${BICyan}] TASK MANAGER  \t\t${IGreen}|"
-echo -e "${IGreen} |  ${BICyan}[${BIYellow}08${BICyan}] RENEW CERT      \t\t${BICyan}[${BIYellow}17${BICyan}] DNS CHANGER  \t\t${IGreen}|"
+echo -e "${IGreen} |  ${BICyan}[${BIYellow}07${BICyan}] ADD HOST/DOMAIN \t\t${BICyan}[${BIYellow}16${BICyan}] TASK MANAGER  \t${IGreen}|"
+echo -e "${IGreen} |  ${BICyan}[${BIYellow}08${BICyan}] RENEW CERT      \t\t${BICyan}[${BIYellow}17${BICyan}] DNS CHANGER  \t${IGreen}|"
 echo -e "${IGreen} |  ${BICyan}[${BIYellow}09${BICyan}] EDIT BANNER     \t\t${BICyan}[${BIYellow}18${BICyan}] TENDANG \t\t${IGreen}|"
 echo -e "${IGreen} |  ${BICyan}[${BIYellow}10${BICyan}] RUNNING STATUS  \t\t${BICyan}[${BIYellow}19${BICyan}] XRAY-CORE MENU \t${IGreen}|"
 echo -e "${IGreen} |  ${BICyan}[${BIYellow}11${BICyan}] SPEEDTEST       \t\t${BICyan}[${BIYellow}20${BICyan}] USER BANDWIDTH \t${IGreen}|"
