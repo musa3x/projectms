@@ -118,7 +118,9 @@ function member(){
   while IFS= read -r line; do
     user=$(echo "$line" | grep -oP '^\+\s*\K\w+(?=\s*->\s*active)')
     exp=$(echo "$line" | grep -oP '(?<=-expired: )\S+')
-    printf "%-17s %2s %-17s %2s \n" "$user" "$exp"
+    if [ ! -z "$user" ] && [ ! -z "$exp" ]; then
+        printf "%-17s %2s\n" "$user" "$exp"
+    fi
 done < /tmp/noobuser.txt
 
    printf "%-17s %2s %-17s %2s \n" "$user "  "$exp  " 
