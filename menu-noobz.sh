@@ -111,11 +111,11 @@ function member(){
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo -e "            LIST MEMBER NoobzVpn               " | lolcat
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" 
-    echo -e "   NAMA             EXPIRE  " | lolcat
+    echo -e "   NAMA       EXPIRE     STATUS  " | lolcat
     echo -e "\033[0;34m-------------------------------------------\033[0m" 
    # noobzvpns --info-all-user
    noobzvpns --info-all-user > /tmp/noobuser.txt
-   awk '/^\+/ { user=$2; sta=$4; }/-expired/ {act=$2; printf " %-10s\t%s\t\t%s\n", user, act, sta }' /tmp/noobuser.txt | lolcat
+   awk '/^\+/ { user=$2; sta=$4; }/-expired/ {act=$2; printf " %-10s%s\t%s\n", user, act, sta }' /tmp/noobuser.txt | lolcat
 
 read -n 1 -s -r -p "Press any key to back on menu"
 menu-noobz
