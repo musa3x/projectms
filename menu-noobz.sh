@@ -111,7 +111,13 @@ function member(){
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo -e "                 MEMBER NoobzVpn               " | lolcat
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" 
-    noobzvpns --info-all-user
+   # noobzvpns --info-all-user
+   noobzvpns --info-all-user > /tmp/noobuser.txt
+   grep -oP '^\+\s*\K\w+(?=\s*->\s*active)' /tmp/noobuser.txt > /tmp/user.txt
+   grep -oP '(?<=-expired: )\S+' /tmp/noobuser.txt > /tmp/exp.txt
+   $user=`cat /tmp/user.txt`
+   $exp=`cat /tmp/exp.txt`
+   printf "%-17s %2s %-17s %2s \n" "$user "  "$exp  " 
 read -n 1 -s -r -p "Press any key to back on menu"
 menu-noobz
 }
