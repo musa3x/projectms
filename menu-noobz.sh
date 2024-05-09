@@ -115,7 +115,7 @@ function member(){
     echo -e "\033[0;34m-------------------------------------------\033[0m" 
    # noobzvpns --info-all-user
    noobzvpns --info-all-user > /tmp/noobuser.txt
-   awk -F': ' '/^\+/ {printf "%-17s", $2} /-expired/ {print $2}' /tmp/noobuser.txt
+   awk '/^\+/ { user=$2 } /-expired/ { printf "%-10s %s\n\n", user, $2 }' /tmp/noobuser.txt
 done < /tmp/noobuser.txt
 read -n 1 -s -r -p "Press any key to back on menu"
 menu-noobz
