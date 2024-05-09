@@ -109,7 +109,7 @@ menu-noobz
 function member(){
     clear
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo -e "               LIST MEMBER NoobzVpn               " | lolcat
+    echo -e "            LIST MEMBER NoobzVpn               " | lolcat
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" 
     echo -e "   Nama             expire dalam  " | lolcat
     echo -e "\033[0;34m-------------------------------------------\033[0m" 
