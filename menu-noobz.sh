@@ -111,14 +111,14 @@ function member(){
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     echo -e "                 MEMBER NoobzVpn               " | lolcat
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" 
-    echo -e "   Nama             expire   " | lolcat
+    echo -e "   Nama             expire dalam  " | lolcat
     echo -e "\033[0;34m-------------------------------------------\033[0m" 
    # noobzvpns --info-all-user
    noobzvpns --info-all-user > /tmp/noobuser.txt
   while IFS= read -r line; do
     user=$(echo "$line" | grep -oP '^\+\s*\K\w+(?=\s*->\s*active)')
     exp=$(echo "$line" | grep -oP '(?<=-expired: )\S+')
-    printf "%-17s %2s %-17s %2s \n" "$user" "$exp" " hari lagi"
+    printf "%-17s %2s %-17s %2s \n" "$user" "$exp"
 done < /tmp/noobuser.txt
 
    printf "%-17s %2s %-17s %2s \n" "$user "  "$exp  " 
