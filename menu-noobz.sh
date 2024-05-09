@@ -122,8 +122,6 @@ function member(){
         printf "%-17s %2s\n" "$user" "$exp"
     fi
 done < /tmp/noobuser.txt
-
-   printf "%-17s %2s %-17s %2s \n" "$user "  "$exp  " 
 read -n 1 -s -r -p "Press any key to back on menu"
 menu-noobz
 }
