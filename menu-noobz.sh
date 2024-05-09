@@ -127,8 +127,17 @@ function blockusr(){
     echo -e "                 BLOCK PENGGUNA              " | lolcat
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" 
     read -p "Nama user : " Pengguna
+    cat /etc/noobzvpns/users.json | jq -r ".$Pengguna" > /tmp/datalogin.txt
+    if [ $(wc -c < /tmp/datalogin.txt) -gt 10 ]; then
     noobzvpns --block-user $Pengguna
     echo "block $Pengguna berhasil."
+    else
+    clear
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "                 BLOCK PENGGUNA              " | lolcat
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" 
+    echo "           USER TIDAK DITEMUKAN" | lolcat
+    fi
 read -n 1 -s -r -p "Press any key to back on menu"
 menu-noobz
 }
@@ -138,8 +147,17 @@ function unblock(){
     echo -e "                 UNBLOCK PENGGUNA               " | lolcat
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" 
     read -p "Nama user : " Pengguna
+     cat /etc/noobzvpns/users.json | jq -r ".$Pengguna" > /tmp/datalogin.txt
+    if [ $(wc -c < /tmp/datalogin.txt) -gt 10 ]; then
     noobzvpns --unblock-user $Pengguna
     echo "Unblock $Pengguna berhasil."
+    else
+    clear 
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+    echo -e "                 UNBLOCK PENGGUNA               " | lolcat
+    echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" 
+    echo "           USER TIDAK DITEMUKAN" | lolcat
+    fi
 read -n 1 -s -r -p "Press any key to back on menu"
 menu-noobz
 }
