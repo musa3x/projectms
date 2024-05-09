@@ -256,7 +256,7 @@ echo -e "  ${BICyan}[${BIWhite}1${BICyan}] Add Account   \t${BICyan}[${BIWhite}5
 echo -e "  ${BICyan}[${BIWhite}2${BICyan}] Delete Account \t${BICyan}[${BIWhite}6${BICyan}] ubah username   " 
 echo -e "  ${BICyan}[${BIWhite}3${BICyan}] Renew Account  \t${BICyan}[${BIWhite}7${BICyan}] Block User  " 
 echo -e "  ${BICyan}[${BIWhite}4${BICyan}] list user     \t${BICyan}[${BIWhite}8${BICyan}] Unblock User   "
-echo -e " ${BIYellow}└──────────────────────────────────────┘${NC}"
+echo -e " ${BIYellow}└──────────────────────────────────────────┘${NC}"
 echo -e "     ${BIYellow}Tekan x atau [ Ctrl+C ] • ${BIWhite}untuk Keluar${NC}"
 echo -e "     ${BIBlue}Tekan Enter untuk kembali ke • ${BIWhite}menu utama ${NC}"
 echo ""
@@ -271,6 +271,7 @@ case $opt in
 6) clear ; ubahuser ;;
 7) clear ; blockusr;;
 8) clear ; unblock ;;
+9) clear ; nano /etc/noobzvpns/config.json ;;
 0) clear ; menu ;;
 x) exit ;;
 *) echo -e "" ; echo "Press any key to back on menu" ; sleep 1 ; menu ;;
