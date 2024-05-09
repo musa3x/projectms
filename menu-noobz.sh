@@ -109,7 +109,7 @@ menu-noobz
 function member(){
     clear
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo -e "                 MEMBER NoobzVpn               " | lolcat
+    echo -e "               LIST MEMBER NoobzVpn               " | lolcat
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" 
     echo -e "   Nama             expire dalam  " | lolcat
     echo -e "\033[0;34m-------------------------------------------\033[0m" 
@@ -128,7 +128,7 @@ menu-noobz
 function blockusr(){
     clear
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo -e "                 Block User               " | lolcat
+    echo -e "                 BLOCK PENGGUNA              " | lolcat
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" 
     read -p "Nama user : " Pengguna
     noobzvpns --block-user $Pengguna
@@ -139,7 +139,7 @@ menu-noobz
 function unblock(){
     clear
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo -e "                 Unblock User               " | lolcat
+    echo -e "                 UNBLOCK PENGGUNA               " | lolcat
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" 
     read -p "Nama user : " Pengguna
     noobzvpns --unblock-user $Pengguna
@@ -150,7 +150,7 @@ menu-noobz
 function ubahpw(){
     clear
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo -e "                 Ubah Password               " | lolcat
+    echo -e "                 UBAH PASSWORD             " | lolcat
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" 
     read -p "Nama user : " Pengguna
     cat /etc/noobzvpns/users.json | jq -r ".$Pengguna" > /tmp/datalogin.txt
@@ -160,10 +160,10 @@ function ubahpw(){
     echo "Ubah Password $Pengguna menjadi $pwbaru berhasil."
     else
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo -e "              Ubah Password                 "| lolcat
+    echo -e "              UBAH PASSWORD                "| lolcat
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"  
     echo -e ""
-    echo -e "  User Tidak Ditemukan     "| lolcat
+    echo -e "  DATA USER TIDAK DITEMUKAN     "| lolcat
     echo -e ""
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     fi
@@ -174,7 +174,7 @@ menu-noobz
 function ubahuser(){
     clear
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo -e "                 UBAH USERNAME              " | lolcat
+    echo -e "                UBAH NAMA PENGGUNA              " | lolcat
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m" 
     read -p "Nama user : " Pengguna
     cat /etc/noobzvpns/users.json | jq -r ".$Pengguna" > /tmp/datalogin.txt
@@ -184,10 +184,10 @@ function ubahuser(){
     echo "Ubah user $Pengguna Menjadi $userbaru berhasil."
     else
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo -e "              UBAH USERNAME                "| lolcat
+    echo -e "              UBAH NAMA PENGGUNA               "| lolcat
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"  
     echo -e ""
-    echo -e "  User Tidak Ditemukan     "| lolcat
+    echo -e "  DATA PENGGUNA TIDAK DITEMUKAN     "| lolcat
     echo -e ""
     echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
     fi
@@ -198,7 +198,7 @@ menu-noobz
 function renew(){
 clear
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "               PERPANJANGAN USER                " | lolcat
+echo -e "             PERPANJANG MASA AKTIF USER                " | lolcat
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"  
 echo
 read -p "Username : " username
@@ -213,7 +213,7 @@ if [ $(wc -c < /tmp/datalogin.txt) -gt 10 ]; then
     noobzvpns --expired-user $username $exp
 clear
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "               RENEW  USER               " | lolcat
+echo -e "               TAMBAH MASA AKTIF               " | lolcat
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"  
 echo -e ""
 echo -e " nama user : $username"
@@ -224,10 +224,10 @@ echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━�
 else
 clear
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "              RENEW  USER                "| lolcat
+echo -e "              TAMBAH MASA AKTIF                "| lolcat
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"  
 echo -e ""
-echo -e "   Username Doesnt Exist      "
+echo -e "   DATA PENGGUNA TIDAK DITEMUKAN     "
 echo -e ""
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 fi
