@@ -236,7 +236,7 @@ echo -e "${BIGreen} ┌───────────────────
 #echo -e " "
 echo -e "${BIGreen} |  ${BICyan}[${BIYellow}01${BICyan}] SSH-WS      ${WB}[${GB}${ssh}${WB}]   \t\t${BICyan}[${BIYellow}04${BICyan}] TROJAN      ${WB}[${GB}${tr}${WB}]\t${BIGreen}|" 
 echo -e "${BIGreen} |  ${BICyan}[${BIYellow}02${BICyan}] VMESS       ${WB}[${GB}${vmess}${WB}] \t\t${BICyan}[${BIYellow}05${BICyan}] SHADOWSOCKS ${WB}[${GB}${ss}${WB}]\t${BIGreen}|"    
-echo -e "${BIGreen} |  ${BICyan}[${BIYellow}03${BICyan}] VLESS       ${WB}[${GB}${vless}${WB}] \t\t${BICyan}[${BIYellow}06${BICyan}] NoobzVpn    ${WB}[${GB}${usrnoob}${WB}]\t${BIGreen}|"   
+echo -e "${BIGreen} |  ${BICyan}[${BIYellow}03${BICyan}] VLESS       ${WB}[${GB}${vless}${WB}] \t\t${BICyan}[${BIYellow}06${BICyan}] NoobzVpn    ${WB}[${GB}${usrnoob}${WB}]${BIGreen}|"   
 echo -e "${BIGreen} └──────────────────────────────────────────────────────────────┘${NC}"
 echo -e "${IGreen} ┌────────────────────────── Menu Tool ─────────────────────────┐${NC}"
 #echo -e "${BICyan}                  ${BIYellow}${UWhite}»»» Menu Service «««${NC}"
