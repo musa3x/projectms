@@ -96,6 +96,7 @@ menu
 	done
 
 uuid=$(cat /proc/sys/kernel/random/uuid)
+#uuid=ms-store-$user
 read -p "Expired (days): " masaaktif
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#vmess$/a\#vms '"$user $exp"'\
