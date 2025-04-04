@@ -209,15 +209,25 @@ chmod +x /usr/local/bin/xray
 
 # Random Port Xray
 trojanws=$((RANDOM + 10000))
+echo "$trojanws" > /etc/xray/trojanws_port
 ssws=$((RANDOM + 10000))
+echo "$ssws" > /etc/xray/ssws_port
 ssgrpc=$((RANDOM + 10000))
+echo "$ssgrpc" > /etc/xray/ssgrpc_port
 vless=$((RANDOM + 10000))
+echo "$vless" > /etc/xray/vless_port
 vlessgrpc=$((RANDOM + 10000))
+echo "$vlessgrpc" > /etc/xray/vlessgrpc_port
 vmess=$((RANDOM + 10000))
+echo "$vmess" > /etc/xray/vmess_port
 worryfree=$((RANDOM + 10000))
-kuotahabis=$((RANDOM + 10000))
+echo "$worryfree" > /etc/xray/worryfree_port
+koutahabis=$((RANDOM + 10000))
+echo "$koutahabis" > /etc/xray/koutahabis_port
 vmessgrpc=$((RANDOM + 10000))
+echo "$vmessgrpc" > /etc/xray/vmessgrpc_port
 trojangrpc=$((RANDOM + 10000))
+echo "$trojangrpc" > /etc/xray/trojangrpc_port
 
 # nginx xray.conf
 rm -fr /etc/nginx/conf.d/xray.conf
@@ -247,7 +257,7 @@ proxy_set_header Host \$http_host;
 location = /vless
 {
 proxy_redirect off;
-proxy_pass http://127.0.0.1:$vless;
+proxy_pass http://127.0.0.1:$(cat /etc/xray/vless_port);
 proxy_http_version 1.1;
 proxy_set_header X-Real-IP \$remote_addr;
 proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
@@ -258,7 +268,7 @@ proxy_set_header Host \$http_host;
 location = /vmess
 {
 proxy_redirect off;
-proxy_pass http://127.0.0.1:$vmess;
+proxy_pass http://127.0.0.1:$(cat /etc/xray/vmess_port);
 proxy_http_version 1.1;
 proxy_set_header X-Real-IP \$remote_addr;
 proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
@@ -269,7 +279,7 @@ proxy_set_header Host \$http_host;
 location = /worryfree
 {
 proxy_redirect off;
-proxy_pass http://127.0.0.1:$worryfree;
+proxy_pass http://127.0.0.1:$(cat /etc/xray/worryfree_port);
 proxy_http_version 1.1;
 proxy_set_header X-Real-IP \$remote_addr;
 proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
@@ -280,7 +290,7 @@ proxy_set_header Host \$http_host;
 location = /kuota-habis
 {
 proxy_redirect off;
-proxy_pass http://127.0.0.1:$kuotahabis;
+proxy_pass http://127.0.0.1:$(cat /etc/xray/koutahabis_port);
 proxy_http_version 1.1;
 proxy_set_header X-Real-IP \$remote_addr;
 proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
@@ -291,7 +301,7 @@ proxy_set_header Host \$http_host;
 location = /trojan-ws
 {
 proxy_redirect off;
-proxy_pass http://127.0.0.1:$trojanws;
+proxy_pass http://127.0.0.1:$(cat /etc/xray/trojanws_port);
 proxy_http_version 1.1;
 proxy_set_header X-Real-IP \$remote_addr;
 proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
@@ -302,7 +312,7 @@ proxy_set_header Host \$http_host;
 location = /ss-ws
 {
 proxy_redirect off;
-proxy_pass http://127.0.0.1:$ssws;
+proxy_pass http://127.0.0.1:$(cat /etc/xray/ssws_port);
 proxy_http_version 1.1;
 proxy_set_header X-Real-IP \$remote_addr;
 proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
@@ -316,7 +326,7 @@ proxy_redirect off;
 grpc_set_header X-Real-IP \$remote_addr;
 grpc_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
 grpc_set_header Host \$http_host;
-grpc_pass grpc://127.0.0.1:$vlessgrpc;
+grpc_pass grpc://127.0.0.1:$(cat /etc/xray/vlessgrpc_port);
 }
 location ^~ /vmess-grpc
 {
@@ -324,7 +334,7 @@ proxy_redirect off;
 grpc_set_header X-Real-IP \$remote_addr;
 grpc_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
 grpc_set_header Host \$http_host;
-grpc_pass grpc://127.0.0.1:$vmessgrpc;
+grpc_pass grpc://127.0.0.1:$(cat /etc/xray/vmessgrpc_port);
 }
 location ^~ /trojan-grpc
 {
@@ -332,7 +342,7 @@ proxy_redirect off;
 grpc_set_header X-Real-IP \$remote_addr;
 grpc_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
 grpc_set_header Host \$http_host;
-grpc_pass grpc://127.0.0.1:$trojangrpc;
+grpc_pass grpc://127.0.0.1:$(cat /etc/xray/trojangrpc_port);
 }
 location ^~ /ss-grpc
 {
@@ -340,7 +350,7 @@ proxy_redirect off;
 grpc_set_header X-Real-IP \$remote_addr;
 grpc_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
 grpc_set_header Host \$http_host;
-grpc_pass grpc://127.0.0.1:$ssgrpc;
+grpc_pass grpc://127.0.0.1:$(cat /etc/xray/ssgrpc_port);
 }
 }
 EOF
@@ -373,7 +383,7 @@ cat >/etc/xray/config.json <<EOF
     },
    {
      "listen": "127.0.0.1",
-     "port": "$vless",
+     "port": "$(cat /etc/xray/vless_port)",
      "protocol": "vless",
       "settings": {
           "decryption":"none",
@@ -393,7 +403,7 @@ cat >/etc/xray/config.json <<EOF
      },
      {
      "listen": "127.0.0.1",
-     "port": "$vmess",
+     "port": "$(cat /etc/xray/vmess_port)",
      "protocol": "vmess",
       "settings": {
             "clients": [
@@ -413,7 +423,7 @@ cat >/etc/xray/config.json <<EOF
      },
      {
      "listen": "127.0.0.1",
-     "port": "$worryfree",
+     "port": "$(cat /etc/xray/worryfree_port)",
      "protocol": "vmess",
       "settings": {
             "clients": [
@@ -433,7 +443,7 @@ cat >/etc/xray/config.json <<EOF
      },
      {
      "listen": "127.0.0.1",
-     "port": "$kuotahabis",
+     "port": "$(cat /etc/xray/koutahabis_port)",
      "protocol": "vmess",
       "settings": {
             "clients": [
@@ -453,7 +463,7 @@ cat >/etc/xray/config.json <<EOF
      },
     {
       "listen": "127.0.0.1",
-      "port": "$trojanws",
+      "port": "$(cat /etc/xray/trojanws_port)",
       "protocol": "trojan",
       "settings": {
           "decryption":"none",		
@@ -474,7 +484,7 @@ cat >/etc/xray/config.json <<EOF
      },
     {
          "listen": "127.0.0.1",
-        "port": "$ssws",
+        "port": "$(cat /etc/xray/ssws_port)",
         "protocol": "shadowsocks",
         "settings": {
            "clients": [
@@ -495,7 +505,7 @@ cat >/etc/xray/config.json <<EOF
      },	
       {
         "listen": "127.0.0.1",
-        "port": "$vlessgrpc",
+        "port": "$(cat /etc/xray/vlessgrpc_port)",
         "protocol": "vless",
         "settings": {
          "decryption":"none",
@@ -515,7 +525,7 @@ cat >/etc/xray/config.json <<EOF
      },
      {
       "listen": "127.0.0.1",
-      "port": "$vmessgrpc",
+      "port": "$(cat /etc/xray/vmessgrpc_port)",
      "protocol": "vmess",
       "settings": {
             "clients": [
@@ -535,7 +545,7 @@ cat >/etc/xray/config.json <<EOF
      },
      {
         "listen": "127.0.0.1",
-        "port": "$trojangrpc",
+        "port": "$(cat /etc/xray/trojangrpc_port)",
         "protocol": "trojan",
         "settings": {
           "decryption":"none",
@@ -555,7 +565,7 @@ cat >/etc/xray/config.json <<EOF
    },
    {
     "listen": "127.0.0.1",
-    "port": "$ssgrpc",
+    "port": "$(cat /etc/xray/ssgrpc_port)",
     "protocol": "shadowsocks",
     "settings": {
         "clients": [
