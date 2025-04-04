@@ -29,7 +29,7 @@ Mod By NevermoreSSH
 ![Hits](https://img.shields.io/badge/XRAY-VLess-f34b20?style=for-the-badge&logo=Cloudflare&logoColor=white&edge_flat=false)
 ![Hits](https://img.shields.io/badge/XRAY-Trojan-f34b20?style=for-the-badge&logo=Cloudflare&logoColor=white&edge_flat=false)
 </h2>
-
+BUKA ins-xray.sh untuk menentukan port xray(/usr/local/bin/xray dan /etc/xray/config.json) harus sama.
 PLEASE MAKE SURE YOUR DOMAIN SETTINGS IN YOUR CLOUDFLARE AS BELOW (SSL/TLS SETTINGS)<br>
 <br>
 
