@@ -33,23 +33,25 @@ RED() { echo -e "\\033[31;1m${*}\\033[0m"; }
 
 # // Export Banner Status Information
 export INFO="[${YELLOW} INFO ${NC}]"
+
 function bckpbot(){
 clear
-IP=$(curl -sS ipv4.icanhazip.com);
+IP=$(curl -sS ipv4.icanhazip.com)
 date=$(date +"%Y-%m-%d")
 domain=$(cat /etc/xray/domain)
 clear
-echo -e "[ ${green}INFO${NC} ] Create for database"
-read -rp "Enter Token (Creat on Botfather) : " -e token
-read -rp "Enter Chat id, Channel, Group Or Your Id  : " -e id_chat
-echo -e "toket=$token" >> /root/botapi.conf
+echo -e "[ ${GREEN}INFO${NC} ] Create for database"
+read -rp "Enter Token (Create on Botfather): " -e token
+read -rp "Enter Chat ID (channel, group, or user ID): " -e id_chat
+echo -e "toket=$token" > /root/botapi.conf
 echo -e "chat_idc=$id_chat" >> /root/botapi.conf
 sleep 1
 clear
-echo -e "[ ${green}INFO${NC} ] Processing... "
+echo -e "[ ${GREEN}INFO${NC} ] Processing... "
 mkdir -p /root/backup
 sleep 1
 
+# Backup data
 cp -r /root/.acme.sh /root/backup/ &> /dev/null
 cp /etc/passwd /root/backup/ &> /dev/null
 cp /etc/group /root/backup/ &> /dev/null
@@ -59,25 +61,46 @@ cp -r /etc/nginx/conf.d /root/backup/nginx &> /dev/null
 cp -r /home/vps/public_html /root/backup/public_html &> /dev/null
 cp -r /etc/cron.d /root/backup/cron.d &> /dev/null
 cp /etc/crontab /root/backup/crontab &> /dev/null
+
+# Compress backup
 cd /root
 zip -r $IP.zip backup > /dev/null 2>&1
 
-curl -F chat_id="$id_chat" -F document=@"$IP.zip" -F caption="Thank You For Using Our Service
-Your Domain : $domain
-Date       : $date
-Your IP VPS  : $IP" https://api.telegram.org/bot$token/sendDocument &> /dev/null
+# Send to Telegram
+curl -s -F chat_id="$id_chat" \
+     -F document=@"$IP.zip" \
+     -F caption="✅ Backup Success!
+📅 Date       : $date
+🌐 Domain     : $domain
+📡 IP VPS     : $IP" \
+     https://api.telegram.org/bot$token/sendDocument > /dev/null
 
-rm -fr /root/backup &> /dev/null
-rm -fr /root/user-backup &> /dev/null
+# Tunggu agar update Telegram masuk
+sleep 3
+
+# Ambil file_id dari getUpdates terbaru
+file_id=$(curl -s "https://api.telegram.org/bot${token}/getUpdates" | jq -r '.result | map(select(.message.document.file_name | endswith(".zip"))) | last | .message.document.file_id')
+
+# Simpan file_id ke file (untuk restore)
+if [[ -n "$file_id" && "$file_id" != "null" ]]; then
+    echo "$file_id" > /root/file_id.txt
+    echo -e "[ ${GREEN}INFO${NC} ] file_id berhasil diambil dan disimpan."
+else
+    echo -e "[ ${RED}ERROR${NC} ] Gagal mengambil file_id dari getUpdates."
+fi
+
+# Hapus file sementara
+rm -rf /root/backup &> /dev/null
+rm -rf /root/user-backup &> /dev/null
 rm -f /root/$NameUser.zip &> /dev/null
 rm -f /root/$IP.zip &> /dev/null
 
-echo " Please Check Your Channel"
+echo "✅ Silakan cek channel atau grup Anda untuk file backup."
 echo -e ""
-
 read -n 1 -s -r -p "Press any key to back on menu"
 menu
 }
+
 function autobckpbot(){
 clear
 cat > /etc/cron.d/bckp_otm <<-END
@@ -98,27 +121,24 @@ function restore(){
     clear
     echo -e "${INFO} Masukkan token Bot Telegram Anda:"
     read -rp "Token Bot : " token
-    echo -e "${INFO} Masukkan chat ID (bisa user ID, channel, atau grup):"
-    read -rp "Chat ID   : " chat_id
-    echo -e "${INFO} Masukkan Message ID (ID pesan file backup di Telegram):"
-    read -rp "Message ID: " message_id
-    echo -e "${INFO} Masukkan Password File ZIP (jika ada):"
+    echo -e "${INFO} Masukkan Password File ZIP (jika ada, tekan Enter jika tidak ada):"
     read -rp "Password  : " zip_pass
 
-    echo -e "${INFO} Mendapatkan link file dari Telegram..."
-
-    # Get file_id from message
-    file_id=$(curl -s "https://api.telegram.org/bot$token/getChatMessages?chat_id=$chat_id&message_id=$message_id" | jq -r '.result.document.file_id')
-
-    if [[ -z "$file_id" || "$file_id" == "null" ]]; then
-        echo -e "${RED}Gagal mendapatkan file_id. Periksa kembali Message ID dan Token.${NC}"
+    # Cek file_id tersimpan
+    if [[ ! -f /root/file_id.txt ]]; then
+        echo -e "${RED}file_id tidak ditemukan! Lakukan backup terlebih dahulu.${NC}"
         exit 1
     fi
-    # Get file path
+
+    file_id=$(cat /root/file_id.txt)
+
+    echo -e "${INFO} Mendapatkan file_path dari Telegram..."
+
+    # Ambil file_path dari file_id
     file_path=$(curl -s "https://api.telegram.org/bot$token/getFile?file_id=$file_id" | jq -r '.result.file_path')
 
     if [[ -z "$file_path" || "$file_path" == "null" ]]; then
-        echo -e "${RED}Gagal mendapatkan file_path dari Telegram.${NC}"
+        echo -e "${RED}Gagal mendapatkan file_path dari Telegram. Periksa token dan file_id.${NC}"
         exit 1
     fi
 
@@ -157,6 +177,7 @@ function restore(){
     read -n 1 -s -r -p "Press any key to back on menu"
     menu
 }
+
 clear
 echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
 echo -e "       ${BIWhite}${UWhite}Backup / Restore ${NC}"
