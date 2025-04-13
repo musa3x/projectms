@@ -231,11 +231,11 @@ cat > /home/vps/public_html/vmess-$user.txt <<-END
              P R O J E C T  O F  M S S T O R E  S S H
                        [Freedom Internet]
 ====================================================================
-          https://github.com/Musa3x/sshwstrvray
+          https://github.com/Musa3x/msproject
 ====================================================================
               Format Vmess WS/GRPC - BBv2
 ====================================================================
-
+UUID :${uuid}
 _______________________________________________________
               Link Vmess Account
 _______________________________________________________
