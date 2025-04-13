@@ -250,7 +250,7 @@ chmod +x /usr/bin/bbr
 #chmod +x /usr/bin/del-xrays
 #chmod +x /usr/bin/user-xrays
 
-# > insert for Telegram backup
+# > id tokne Telegram backup
 token="7607798087:AAENpPFfrOcODEV4ogRgukaG0KMuFZN3XJM"
 chat_id="5442758654"
 cat > /root/botapi.conf <<-EOF
