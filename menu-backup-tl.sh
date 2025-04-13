@@ -156,6 +156,14 @@ cp -r /root/backup/cron.d /etc/ &>/dev/null
     rm -rf /root/backup
 
     echo -e "${GREEN}Restore selesai.${NC}"
+curl -s -X POST "https://api.telegram.org/bot$token/sendMessage" \
+    -d chat_id="$chat_id" \
+    -d text="✅ *Restore Berhasil*
+🗓️ Tanggal : $(date +"%Y-%m-%d %H:%M:%S")
+📂 VPS IP : $(curl -s ipv4.icanhazip.com)
+📁 Status : Data berhasil direstore!" \
+    -d parse_mode="Markdown" > /dev/null
+
     read -n 1 -s -r -p "Tekan tombol apa saja untuk kembali ke menu"
     menu-backup-tl
 }
