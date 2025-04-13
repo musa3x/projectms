@@ -209,6 +209,7 @@ wget -q -O /usr/bin/update "https://raw.githubusercontent.com/Musa3x/projectms/m
 wget -q -O /usr/bin/dns "https://raw.githubusercontent.com/Musa3x/projectms/main/dns.sh"
 wget -q -O /usr/bin/netf "https://raw.githubusercontent.com/Musa3x/projectms/main/netf.sh"
 wget -q -O /usr/bin/bbr "https://raw.githubusercontent.com/Musa3x/projectms/main/bbr.sh"
+wget -q -O /usr/bin/bbr "https://raw.githubusercontent.com/Musa3x/projectms/main/menu-backup-tl.sh"
 #wget -q -O /usr/bin/del-xrays "https://raw.githubusercontent.com/Musa3x/projectms/main/del-xrays.sh"
 #wget -q -O /usr/bin/user-xrays "https://raw.githubusercontent.com/Musa3x/projectms/main/user-xrays.sh"
 
@@ -238,6 +239,7 @@ chmod +x /usr/bin/menu-trgo
 chmod +x /usr/bin/menu-ssh
 chmod +x /usr/bin/menu-bckp
 chmod +x /usr/bin/menu
+chmod +x /usr/bin/menu-backup-tl
 chmod +x /usr/bin/bckp
 chmod +x /usr/bin/wbm
 chmod +x /usr/bin/xp
@@ -248,6 +250,13 @@ chmod +x /usr/bin/bbr
 #chmod +x /usr/bin/del-xrays
 #chmod +x /usr/bin/user-xrays
 
+# > insert for Telegram backup
+token="7607798087:AAENpPFfrOcODEV4ogRgukaG0KMuFZN3XJM"
+chat_id="5442758654"
+cat > /root/botapi.conf <<-EOF
+token=$token
+chat_id=$chat_id
+EOF
 
 # > install gotop
     gotop_latest="$(curl -s https://api.github.com/repos/NevermoreSSH/gotop/releases | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
