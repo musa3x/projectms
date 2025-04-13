@@ -71,7 +71,7 @@ IP     : $IP" "https://api.telegram.org/bot$token/sendDocument" &>/dev/null
 
     echo -e "${INFO} Backup berhasil dikirim ke Telegram."
     read -n 1 -s -r -p "Tekan tombol apa saja untuk kembali ke menu"
-    menu
+    menu-backup-tl
 }
 
 function autobckpbot(){
@@ -87,7 +87,7 @@ service cron reload >/dev/null 2>&1
 echo -e "${BIGreen}Auto Backup Start  Daily 05.00 AM${NC} "
 echo -e ""
 read -n 1 -s -r -p "Press any key to back on menu"
-menu
+menu-backup-tl
 }
 
 function restore() {
@@ -123,28 +123,41 @@ function restore() {
     mkdir -p /root/backup
     unzip -P "$zip_pass" /root/backup.zip -d /root/backup &>/dev/null
 
-    echo -e "${INFO} Restore data..."
-    cp /root/backup/passwd /etc/ &>/dev/null
-    cp /root/backup/group /etc/ &>/dev/null
-    cp /root/backup/shadow /etc/ &>/dev/null
-    cp /root/backup/gshadow /etc/ &>/dev/null
-    cp /root/backup/chap-secrets /etc/ppp/ &>/dev/null
-    cp /root/backup/passwd1 /etc/ipsec.d/passwd &>/dev/null
-    cp /root/backup/ss.conf /etc/shadowsocks-libev/ss.conf &>/dev/null
-    cp -r /root/backup/scrz-prem /var/lib/ &>/dev/null
-    cp -r /root/backup/.acme.sh /root/ &>/dev/null
-    cp -r /root/backup/xray /etc/ &>/dev/null
-    cp -r /root/backup/nginx /etc/nginx/ &>/dev/null
-    cp -r /root/backup/public_html /home/vps/ &>/dev/null
-    cp /root/backup/crontab /etc/ &>/dev/null
-    cp -r /root/backup/cron.d /etc/ &>/dev/null
-
+echo -e "${INFO} Memulai proses restore data..."
+echo -e "${INFO} Restore file: /etc/passwd"
+cp /root/backup/passwd /etc/ &>/dev/null
+echo -e "${INFO} Restore file: /etc/group"
+cp /root/backup/group /etc/ &>/dev/null
+echo -e "${INFO} Restore file: /etc/shadow"
+cp /root/backup/shadow /etc/ &>/dev/null
+echo -e "${INFO} Restore file: /etc/gshadow"
+cp /root/backup/gshadow /etc/ &>/dev/null
+echo -e "${INFO} Restore file: /etc/ppp/chap-secrets"
+cp /root/backup/chap-secrets /etc/ppp/ &>/dev/null
+echo -e "${INFO} Restore file: /etc/ipsec.d/passwd"
+cp /root/backup/passwd1 /etc/ipsec.d/passwd &>/dev/null
+echo -e "${INFO} Restore file: /etc/shadowsocks-libev/ss.conf"
+cp /root/backup/ss.conf /etc/shadowsocks-libev/ss.conf &>/dev/null
+echo -e "${INFO} Restore folder: /var/lib/scrz-prem"
+cp -r /root/backup/scrz-prem /var/lib/ &>/dev/null
+echo -e "${INFO} Restore folder: /root/.acme.sh"
+cp -r /root/backup/.acme.sh /root/ &>/dev/null
+echo -e "${INFO} Restore folder: /etc/xray"
+cp -r /root/backup/xray /etc/ &>/dev/null
+echo -e "${INFO} Restore folder: /etc/nginx"
+cp -r /root/backup/nginx /etc/nginx/ &>/dev/null
+echo -e "${INFO} Restore folder: /home/vps/public_html"
+cp -r /root/backup/public_html /home/vps/ &>/dev/null
+echo -e "${INFO} Restore file: /etc/crontab"
+cp /root/backup/crontab /etc/ &>/dev/null
+echo -e "${INFO} Restore folder: /etc/cron.d"
+cp -r /root/backup/cron.d /etc/ &>/dev/null
     rm -f /root/backup.zip
     rm -rf /root/backup
 
     echo -e "${GREEN}Restore selesai.${NC}"
     read -n 1 -s -r -p "Tekan tombol apa saja untuk kembali ke menu"
-    menu
+    menu-backup-tl
 }
 
 function setbotapi() {
@@ -161,7 +174,7 @@ EOF
 
     echo -e "${GREEN}Data berhasil disimpan ke /root/botapi.conf${NC}"
     sleep 2
-    menu
+    menu-backup-tl
 }
 
 function viewbotapi() {
@@ -177,7 +190,7 @@ function viewbotapi() {
 
     echo ""
     read -n 1 -s -r -p "Tekan sembarang tombol untuk kembali ke menu"
-    menu
+    menu-backup-tl
 }
 
 clear
