@@ -209,7 +209,7 @@ wget -q -O /usr/bin/update "https://raw.githubusercontent.com/Musa3x/projectms/m
 wget -q -O /usr/bin/dns "https://raw.githubusercontent.com/Musa3x/projectms/main/dns.sh"
 wget -q -O /usr/bin/netf "https://raw.githubusercontent.com/Musa3x/projectms/main/netf.sh"
 wget -q -O /usr/bin/bbr "https://raw.githubusercontent.com/Musa3x/projectms/main/bbr.sh"
-wget -q -O /usr/bin/bbr "https://raw.githubusercontent.com/Musa3x/projectms/main/menu-backup-tl.sh"
+wget -q -O /usr/bin/menu-backup-tl "https://raw.githubusercontent.com/Musa3x/projectms/main/menu-backup-tl.sh"
 #wget -q -O /usr/bin/del-xrays "https://raw.githubusercontent.com/Musa3x/projectms/main/del-xrays.sh"
 #wget -q -O /usr/bin/user-xrays "https://raw.githubusercontent.com/Musa3x/projectms/main/user-xrays.sh"
 
