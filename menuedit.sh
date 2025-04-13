@@ -292,7 +292,7 @@ case $opt in
 44) clear ; autoreboot ;;
 55) clear ; reboot ;;
 66) clear ; restart ;;
-77) clear ; menu-bckp ;;
+77) clear ; menu-backup-tl ;;
 0) clear ; menu ;;
 xx) exit ;;
 *) echo -e "" ; echo "Press any key to back on menu" ; sleep 1 ; menu ;;
