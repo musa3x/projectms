@@ -92,8 +92,8 @@ clear
 		fi
 	done
 
-uuid=$(cat /proc/sys/kernel/random/uuid)
-#uuid="ms-store-$user"
+#uuid=$(cat /proc/sys/kernel/random/uuid)
+uuid="ms-store-$user"
 read -p "Expired (days): " masaaktif
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#trojanws$/a\#tr '"$user $exp"'\
@@ -107,11 +107,11 @@ cat > /home/vps/public_html/trojan-$user.txt <<-END
              P R O J E C T  O F  M S S T O R E  S S H
                        [Freedom Internet]
 ====================================================================
-         https://github.com/Musa3x/sshwstrvray
+         https://github.com/Musa3x/projectms
 ====================================================================
                Format Trojan WS/GO/GRPC - BBv2
 ====================================================================
-
+Password : ${uuid}
 _______________________________________________________
               Link Trojan Account
 _______________________________________________________
