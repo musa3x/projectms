@@ -63,13 +63,14 @@ function bckpbot() {
     zip -r $IP.zip backup &>/dev/null
 
     curl -F chat_id="$chat_id" -F document=@"$IP.zip" -F caption="Backup Data
-Domain : $domain
-Date   : $date
-IP     : $IP" "https://api.telegram.org/bot$token/sendDocument" &>/dev/null
+⚠️Status : 🆗
+🌐Domain : $domain
+🗓️Date   : $date
+🖥️IP     : $IP" "https://api.telegram.org/bot$token/sendDocument" &>/dev/null
 
     rm -fr /root/backup /root/user-backup /root/$IP.zip &>/dev/null
 
-    echo -e "${INFO} Backup berhasil dikirim ke Telegram."
+    echo -e "${INFO} ✅ Backup berhasil dikirim ke Telegram."
     read -n 1 -s -r -p "Tekan tombol apa saja untuk kembali ke menu"
     menu-backup-tl
 }
@@ -125,32 +126,60 @@ function restore() {
 
 echo -e "${INFO} Memulai proses restore data..."
 echo -e "${INFO} Restore file: /etc/passwd"
+sleep 1
+echo -e "${INFO} ✅ Sukses"
 cp /root/backup/passwd /etc/ &>/dev/null
 echo -e "${INFO} Restore file: /etc/group"
+sleep 1
+echo -e "${INFO} ✅ Sukses"
 cp /root/backup/group /etc/ &>/dev/null
 echo -e "${INFO} Restore file: /etc/shadow"
+sleep 1
+echo -e "${INFO} ✅ Sukses"
 cp /root/backup/shadow /etc/ &>/dev/null
 echo -e "${INFO} Restore file: /etc/gshadow"
+sleep 1
+echo -e "${INFO} ✅ Sukses"
 cp /root/backup/gshadow /etc/ &>/dev/null
 echo -e "${INFO} Restore file: /etc/ppp/chap-secrets"
+sleep 1
+echo -e "${INFO} ✅ Sukses"
 cp /root/backup/chap-secrets /etc/ppp/ &>/dev/null
 echo -e "${INFO} Restore file: /etc/ipsec.d/passwd"
+sleep 1
+echo -e "${INFO} ✅ Sukses"
 cp /root/backup/passwd1 /etc/ipsec.d/passwd &>/dev/null
 echo -e "${INFO} Restore file: /etc/shadowsocks-libev/ss.conf"
+sleep 1
+echo -e "${INFO} ✅ Sukses"
 cp /root/backup/ss.conf /etc/shadowsocks-libev/ss.conf &>/dev/null
 echo -e "${INFO} Restore folder: /var/lib/scrz-prem"
+sleep 1
+echo -e "${INFO} ✅ Sukses"
 cp -r /root/backup/scrz-prem /var/lib/ &>/dev/null
 echo -e "${INFO} Restore folder: /root/.acme.sh"
+sleep 1
+echo -e "${INFO} ✅ Sukses"
 cp -r /root/backup/.acme.sh /root/ &>/dev/null
 echo -e "${INFO} Restore folder: /etc/xray"
+sleep 1
+echo -e "${INFO} ✅ Sukses"
 cp -r /root/backup/xray /etc/ &>/dev/null
 echo -e "${INFO} Restore folder: /etc/nginx"
+sleep 1
+echo -e "${INFO} ✅ Sukses"
 cp -r /root/backup/nginx /etc/nginx/ &>/dev/null
 echo -e "${INFO} Restore folder: /home/vps/public_html"
+sleep 1
+echo -e "${INFO} ✅ Sukses"
 cp -r /root/backup/public_html /home/vps/ &>/dev/null
 echo -e "${INFO} Restore file: /etc/crontab"
+sleep 1
+echo -e "${INFO} ✅ Sukses"
 cp /root/backup/crontab /etc/ &>/dev/null
 echo -e "${INFO} Restore folder: /etc/cron.d"
+sleep 1
+echo -e "${INFO} ✅ Sukses"
 cp -r /root/backup/cron.d /etc/ &>/dev/null
     rm -f /root/backup.zip
     rm -rf /root/backup
@@ -160,8 +189,8 @@ curl -s -X POST "https://api.telegram.org/bot$token/sendMessage" \
     -d chat_id="$chat_id" \
     -d text="✅ *Restore Berhasil*
 🗓️ Tanggal : $(date +"%Y-%m-%d %H:%M:%S")
-📂 VPS IP : $(curl -s ipv4.icanhazip.com)
-📁 Status : Data berhasil direstore!" \
+🖥️ VPS IP  : $(curl -s ipv4.icanhazip.com)
+⚠️ Status  : 🆗" \
     -d parse_mode="Markdown" > /dev/null
 
     read -n 1 -s -r -p "Tekan tombol apa saja untuk kembali ke menu"
