@@ -63,10 +63,10 @@ function bckpbot() {
     zip -r $IP.zip backup &>/dev/null
 
     curl -F chat_id="$chat_id" -F document=@"$IP.zip" -F caption="Backup Data
-⚠️Status : 🆗
-🌐Domain : $domain
-🗓️Date   : $date
-🖥️IP     : $IP" "https://api.telegram.org/bot$token/sendDocument" &>/dev/null
+⚠️Status    : 🆗
+🌐Domain    : $domain
+🗓️Date      : $date
+🖥️IP        : $IP" "https://api.telegram.org/bot$token/sendDocument" &>/dev/null
 
     rm -fr /root/backup /root/user-backup /root/$IP.zip &>/dev/null
 
