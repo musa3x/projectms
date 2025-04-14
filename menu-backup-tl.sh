@@ -53,23 +53,38 @@ function bckpbot() {
     cp -r /root/.acme.sh /root/backup/ &>/dev/null
     cp /etc/passwd /root/backup/ &>/dev/null
     cp /etc/group /root/backup/ &>/dev/null
+    echo -e "${INFO} Backup file: /etc/passwd dan /etc/group"
+    echo -e "${INFO} ✅ Sukses"
     cp -r /var/lib/scrz-prem/ /root/backup/scrz-prem &>/dev/null
     cp -r /etc/xray /root/backup/xray &>/dev/null
+    echo -e "${INFO} Backup file: /etc/xray"
+    echo -e "${INFO} ✅ Sukses"
     cp -r /etc/nginx/conf.d /root/backup/nginx &>/dev/null
+    echo -e "${INFO} Backup file: /etc/nginx/conf.d"
+    echo -e "${INFO} ✅ Sukses"
     cp -r /home/vps/public_html /root/backup/public_html &>/dev/null
+    echo -e "${INFO} Backup file: /home/vps/public_html"
+    echo -e "${INFO} ✅ Sukses"
     cp -r /etc/cron.d /root/backup/cron.d &>/dev/null
+    echo -e "${INFO} Backup file: /etc/cron.d"
+    echo -e "${INFO} ✅ Sukses"
     cp /etc/crontab /root/backup/crontab &>/dev/null
+    echo -e "${INFO} Backup file: /etc/crontab"
+    echo -e "${INFO} ✅ Sukses"
     cd /root
     zip -r $IP.zip backup &>/dev/null
-
+    echo -e "${INFO} Send File..."
+    
     curl -F chat_id="$chat_id" -F document=@"$IP.zip" -F caption="Backup Data
 ⚠️Status    : 🆗
 🌐Domain    : $domain
 🗓️Date      : $date
 🖥️IP        : $IP" "https://api.telegram.org/bot$token/sendDocument" &>/dev/null
-
+    echo -e "${INFO} ✅ Sukses"
+    echo -e "${INFO} Menghapus Backup File..."
     rm -fr /root/backup /root/user-backup /root/$IP.zip &>/dev/null
-
+    sleep 1
+    echo -e "${INFO} ✅ Sukses"
     echo -e "${INFO} ✅ Backup berhasil dikirim ke Telegram."
     read -n 1 -s -r -p "Tekan tombol apa saja untuk kembali ke menu"
     menu-backup-tl
@@ -126,59 +141,45 @@ function restore() {
 
 echo -e "${INFO} Memulai proses restore data..."
 echo -e "${INFO} Restore file: /etc/passwd"
-sleep 1
 echo -e "${INFO} ✅ Sukses"
 cp /root/backup/passwd /etc/ &>/dev/null
 echo -e "${INFO} Restore file: /etc/group"
-sleep 1
 echo -e "${INFO} ✅ Sukses"
 cp /root/backup/group /etc/ &>/dev/null
 echo -e "${INFO} Restore file: /etc/shadow"
-sleep 1
 echo -e "${INFO} ✅ Sukses"
 cp /root/backup/shadow /etc/ &>/dev/null
 echo -e "${INFO} Restore file: /etc/gshadow"
-sleep 1
 echo -e "${INFO} ✅ Sukses"
 cp /root/backup/gshadow /etc/ &>/dev/null
 echo -e "${INFO} Restore file: /etc/ppp/chap-secrets"
-sleep 1
 echo -e "${INFO} ✅ Sukses"
 cp /root/backup/chap-secrets /etc/ppp/ &>/dev/null
 echo -e "${INFO} Restore file: /etc/ipsec.d/passwd"
-sleep 1
 echo -e "${INFO} ✅ Sukses"
 cp /root/backup/passwd1 /etc/ipsec.d/passwd &>/dev/null
 echo -e "${INFO} Restore file: /etc/shadowsocks-libev/ss.conf"
-sleep 1
 echo -e "${INFO} ✅ Sukses"
 cp /root/backup/ss.conf /etc/shadowsocks-libev/ss.conf &>/dev/null
 echo -e "${INFO} Restore folder: /var/lib/scrz-prem"
-sleep 1
 echo -e "${INFO} ✅ Sukses"
 cp -r /root/backup/scrz-prem /var/lib/ &>/dev/null
 echo -e "${INFO} Restore folder: /root/.acme.sh"
-sleep 1
 echo -e "${INFO} ✅ Sukses"
 cp -r /root/backup/.acme.sh /root/ &>/dev/null
 echo -e "${INFO} Restore folder: /etc/xray"
-sleep 1
 echo -e "${INFO} ✅ Sukses"
 cp -r /root/backup/xray /etc/ &>/dev/null
 echo -e "${INFO} Restore folder: /etc/nginx"
-sleep 1
 echo -e "${INFO} ✅ Sukses"
 cp -r /root/backup/nginx /etc/nginx/ &>/dev/null
 echo -e "${INFO} Restore folder: /home/vps/public_html"
-sleep 1
 echo -e "${INFO} ✅ Sukses"
 cp -r /root/backup/public_html /home/vps/ &>/dev/null
 echo -e "${INFO} Restore file: /etc/crontab"
-sleep 1
 echo -e "${INFO} ✅ Sukses"
 cp /root/backup/crontab /etc/ &>/dev/null
 echo -e "${INFO} Restore folder: /etc/cron.d"
-sleep 1
 echo -e "${INFO} ✅ Sukses"
 cp -r /root/backup/cron.d /etc/ &>/dev/null
     rm -f /root/backup.zip
