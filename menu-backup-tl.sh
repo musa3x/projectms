@@ -49,7 +49,7 @@ function bckpbot() {
     
     echo -e "[ ${GREEN}INFO${NC} ] Memproses backup..."
     mkdir -p /root/backup
-
+    sleep 2
     cp -r /root/.acme.sh /root/backup/ &>/dev/null
     cp /etc/passwd /root/backup/ &>/dev/null
     cp /etc/group /root/backup/ &>/dev/null
