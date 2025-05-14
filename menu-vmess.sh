@@ -192,6 +192,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^#vmsg " "/etc/xray/config.json")
 user=$(grep -E "^#vmsg " "/etc/xray/config.json" | cut -d ' ' -f 2 | sed -n "${CLIENT_NUMBER}"p)
 exp=$(grep -E "^#vmsg " "/etc/xray/config.json" | cut -d ' ' -f 3 | sed -n "${CLIENT_NUMBER}"p)
 sed -i "/^#vmsg $user $exp/,/^},{/d" /etc/xray/config.json
+sed -i "/^### $user $exp/,/^},{/d" /etc/xray/config.json
 sed -i "/^#vms $user $exp/,/^},{/d" /etc/xray/config.json
 sed -i "/^#vmessworry $user $exp/,/^},{/d" /etc/xray/config.json
 sed -i "/^#vmesskuota $user $exp/,/^},{/d" /etc/xray/config.json
