@@ -93,7 +93,7 @@ clear
 	done
 
 #uuid=$(cat /proc/sys/kernel/random/uuid)
-uuid="ms-store-$user"
+uuid="$(cat /etc/xray/domain)-$user"
 read -p "Expired (days): " masaaktif
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#trojanws$/a\#tr '"$user $exp"'\
