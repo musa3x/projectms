@@ -93,7 +93,7 @@ clear
 		fi
 	done
 
-uuid=$(cat /proc/sys/kernel/random/uuid)
+uuid="blaznet-$user"
 #uuid=ms-store-$user
 read -p "Expired (days): " masaaktif
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
