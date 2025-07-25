@@ -70,7 +70,7 @@ domain=$(cat /etc/xray/domain)
 else
 domain=$IP
 fi
-
+domain_base=$(echo "$domain" | cut -d. -f1)
 tls="$(cat ~/log-install.txt | grep -w "Vmess TLS" | cut -d: -f2|sed 's/ //g')"
 none="$(cat ~/log-install.txt | grep -w "Vmess None TLS" | cut -d: -f2|sed 's/ //g')"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
@@ -96,7 +96,8 @@ menu
 	done
 
 #uuid=$(cat /proc/sys/kernel/random/uuid)
-uuid=${domain}-$user
+uuid="${domain_base}-${user}"
+#uuid=${domain}-$user
 read -p "Expired (days): " masaaktif
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#vmess$/a\#vms '"$user $exp"'\
