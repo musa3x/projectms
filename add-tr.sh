@@ -66,10 +66,10 @@ clear
 source /var/lib/scrz-prem/ipvps.conf
 if [[ "$IP" = "" ]]; then
 domain=$(cat /etc/xray/domain)
-domain_base=$(echo "$domain" | cut -d. -f1)
 else
 domain=$IP
 fi
+domain_base=$(echo "$domain" | cut -d. -f1)
 tr="$(cat ~/log-install.txt | grep -w "Trojan WS " | cut -d: -f2|sed 's/ //g')"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${user_EXISTS} == '0' ]]; do
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
