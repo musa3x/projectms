@@ -72,6 +72,7 @@ domain=$(cat /etc/xray/domain)
 else
 domain=$IP
 fi
+domain_base=$(echo "$domain" | cut -d. -f1)
 
 tls="$(cat ~/log-install.txt | grep -w "Sodosok WS/GRPC" | cut -d: -f2|sed 's/ //g')"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
@@ -97,7 +98,8 @@ v2ray-menu
 	done
 
 cipher="aes-128-gcm"
-uuid=$(cat /proc/sys/kernel/random/uuid)
+#uuid=$(cat /proc/sys/kernel/random/uuid)
+uuid="${domain_base}-${user}"
 read -p "Expired (days): " masaaktif
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#ssws$/a\#ssw '"$user $exp"'\
