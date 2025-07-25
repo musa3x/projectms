@@ -66,6 +66,7 @@ clear
 source /var/lib/scrz-prem/ipvps.conf
 if [[ "$IP" = "" ]]; then
 domain=$(cat /etc/xray/domain)
+domain_base=$(echo "$domain" | cut -d. -f1)
 else
 domain=$IP
 fi
@@ -91,9 +92,9 @@ clear
 			trojan-menu
 		fi
 	done
-
+uuid="${domain_base}-${user}"
 #uuid=$(cat /proc/sys/kernel/random/uuid)
-uuid="blaznet-$user"
+#uuid="blaznet-$user"
 read -p "Expired (days): " masaaktif
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#trojanws$/a\#tr '"$user $exp"'\
