@@ -70,6 +70,7 @@ domain=$(cat /etc/xray/domain)
 else
 domain=$IP
 fi
+domain_base=$(echo "$domain" | cut -d. -f1)
 tls="$(cat ~/log-install.txt | grep -w "Vless TLS" | cut -d: -f2|sed 's/ //g')"
 none="$(cat ~/log-install.txt | grep -w "Vless None TLS" | cut -d: -f2|sed 's/ //g')"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
@@ -93,7 +94,8 @@ clear
 		fi
 	done
 
-uuid="blaznet-$user"
+#uuid="blaznet-$user"
+uuid="${domain_base}-${user}"
 #uuid=ms-store-$user
 read -p "Expired (days): " masaaktif
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
