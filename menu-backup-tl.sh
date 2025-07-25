@@ -71,6 +71,11 @@ function bckpbot() {
     cp /etc/crontab /root/backup/crontab &>/dev/null
     echo -e "${INFO} Backup file: /etc/crontab"
     echo -e "${INFO} ✅ Sukses"
+    cp /etc/shadow /root/backup/ &>/dev/null
+    cp /etc/gshadow /root/backup/ &>/dev/null
+    echo -e "${INFO} Backup file: /etc/shadow dan /etc/gshadow"
+    echo -e "${INFO} ✅ Sukses"
+
     cd /root
     zip -r $IP.zip backup &>/dev/null
     echo -e "${INFO} Send File..."
@@ -169,7 +174,7 @@ function restore() {
         menu-backup-tl
         return
     fi
-
+    
     echo -e "${INFO} Memulai proses restore data..."
     
     # Backup konfigurasi saat ini sebagai cadangan
@@ -262,14 +267,25 @@ function restore() {
     rm -rf /root/backup
 
     echo -e "${GREEN}Restore selesai. Semua data telah dipulihkan ke server VPS.${NC}"
-    
+    echo -e "${INFO} Daftar user aktif yang berhasil direstore:\n"
+    # Tangkap user SSH dari sistem
+    ssh_users=$(getent passwd | grep '/home' | cut -d: -f1)
+    echo -e "🔹 SSH/WS :\n$ssh_users\n"
+    # Tangkap user dari Xray berdasarkan protokol
+    for p in vmess vless trojan; do
+        xray_users=$(grep -A 20 "\"protocol\": \"$p\"" /etc/xray/config.json | grep -oP '"email":\s*"\K[^"]+' | sort -u)
+        echo -e "🔹 $p :\n$xray_users\n"
+    done
+    systemctl restart ssh
+    systemctl restart cron
+
     # Kirim notifikasi ke Telegram bahwa restore berhasil
     curl -s -X POST "https://api.telegram.org/bot$token/sendMessage" \
         -d chat_id="$chat_id" \
         -d text="✅ *Restore Berhasil*
-🗓️ Tanggal : $(date +"%Y-%m-%d %H:%M:%S")
-🖥️ VPS IP  : $(curl -s ipv4.icanhazip.com)
-⚠️ Status  : 🆗" \
+        🗓️ Tanggal : $(date +"%Y-%m-%d %H:%M:%S")
+        🖥️ VPS IP  : $(curl -s ipv4.icanhazip.com)
+        ⚠️ Status  : 🆗" \
         -d parse_mode="Markdown" > /dev/null
 
     read -n 1 -s -r -p "Tekan tombol apa saja untuk kembali ke menu"
