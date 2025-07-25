@@ -197,7 +197,6 @@ wget -q -O /usr/bin/menu-ss "https://raw.githubusercontent.com/Musa3x/projectms/
 wget -q -O /usr/bin/menu-trojan "https://raw.githubusercontent.com/Musa3x/projectms/main/menu-trojan.sh"
 wget -q -O /usr/bin/menu-trgo "https://raw.githubusercontent.com/Musa3x/projectms/main/menu-trgo.sh"
 wget -q -O /usr/bin/menu-ssh "https://raw.githubusercontent.com/Musa3x/projectms/main/menu-ssh1.sh"
-wget -q -O /usr/bin/menu-bckp "https://raw.githubusercontent.com/Musa3x/projectms/main/menu-bckp-telegram.sh"
 wget -q -O /usr/bin/menu-bckp "https://raw.githubusercontent.com/Musa3x/projectms/main/menu-bckp-github.sh"
 wget -q -O /usr/bin/bckp "https://raw.githubusercontent.com/Musa3x/projectms/main/bckpbot.sh"
 wget -q -O /usr/bin/usernew "https://raw.githubusercontent.com/Musa3x/projectms/main/usernew.sh"
